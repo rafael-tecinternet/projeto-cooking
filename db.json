@@ -1,0 +1,699 @@
+{
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "doces"
+    },
+    {
+      "id": 2,
+      "nome": "salgados"
+    },
+    {
+      "id": 3,
+      "nome": "massas"
+    },
+    {
+      "id": 4,
+      "nome": "vegano"
+    },
+    {
+      "id": 5,
+      "nome": "molhos"
+    },
+    {
+      "id": 6,
+      "nome": "carnes"
+    }
+  ],
+  "receitas": [
+    {
+      "id": 1,
+      "titulo": "Brownie de Chocolate com Gengibre",
+      "ingredientes": [
+        "50 g farinha de milho fina",
+        "10 g de cacau em pó",
+        "250 g de chocolate meio amargo",
+        "200 g de manteiga sem sal cortada em cubos",
+        "20 ml de suco de gengibre",
+        "5 ovos",
+        "200 g de açúcar",
+        "1 colher (chá) de fermento em pó",
+        "100 g de nozes picadas grosseiramente"
+      ],
+      "modoDePreparo": [
+        "1 - Coloque numa tigela a farinha de milho fina e o cacau em pó.",
+        "2 - Misture e reserve.",
+        "3 - Numa panela, em banho-maria, derreta o chocolate meio amargo picado com a manteiga sem sal cortada em cubos.",
+        "4 - Retire do fogo.",
+        "5 - Adicione o suco de gengibre e misture.",
+        "6 - Acrescente a mistura de farinha com cacau em pó (reservada acima). Misture bem e reserve.",
+        "7 - Numa batedeira, coloque os ovos e o açúcar. Bata bem até dobrar de volume.",
+        "8 - Com a batedeira ainda ligada, adicione o fermento em pó e bata até misturar.",
+        "9 - Desligue a batedeira. Acrescente a mistura de chocolate (reservada acima) e as nozes picadas. Misture.",
+        "10 - Transfira a massa para uma assadeira retangular (18 cm X 30 cm) untada e forrada com papel manteiga.",
+        "11 - Leve para assar em forno médio pré-aquecido a 180°C por +/- 40 minutos.",
+        "12 - Retire do forno.",
+        "13 - Cubra o brownie com papel manteiga.",
+        "14 - Coloque outra assadeira do mesmo tamanho pressionando levemente o brownie para que fique mais compacto e úmido",
+        "15 - Deixe por +/- 4 horas na geladeira.",
+        "16 - Retire a assadeira de cima do brownie, desenforme, corte em quadrados e sirva em seguida."
+      ],
+      "rendimento": "20 porções",
+      "tempoDePreparo": "60 minutos",
+      "categoria": "doces",
+      "imagem": "brownie.jpg"
+    },
+    {
+      "id": 2,
+      "titulo": "Bombom de cerejas com álcool",
+      "ingredientes": [
+        "100g de calda da cereja",
+        "400ml de vodka (ou Bourbon ou whisky com 40º de álcool)",
+        "Corante alimentício em pó vermelho a gosto",
+        "50 cerejas em calda com cabo e drenadas",
+        "600g de fondant branco",
+        "400g de chocolate meio amargo temperado"
+      ],
+      "modoDePreparo": [
+        "1 - Em uma panela coloque 100g da calda da cereja, 400ml de vodca, corante alimentício em pó vermelho a gosto e misture. Leve ao fogo baixo até atingir a temperatura de 40°C. Retire do fogo.",
+        "2 -Coloque em um pote com tampa 50 cerejas em calda com cabo e drenadas e a calda da cereja aquecida (feita acima), tampe e guarde num local arejado por no mínimo 15 dias.",
+        "Depois deste tempo retire as cerejas do pote e coloque em uma peneira para escorrer (20 minutos). Reserve as cerejas e a calda.",
+        "3 - Aqueça em uma panela 600g de fondant branco (entre 60° a 65°C) até que derreta completamente mexendo delicadamente. Coloque um pouco de calda da cereja para afinar o fondant. Retire do fogo.",
+        "4 - Mergulhe as cerejas (reservadas acima) no fondant até que fiquem cobertas totalmente. Em seguida coloque em um papel-manteiga untado (ou tapete antiaderente) para secar (cerca de 10 minutos).",
+        "5 - Em outro papel-manteiga untado (ou tapete antiaderente) pingue uma gota com 1 cm de diâmetro de chocolate meio amargo derretido e temperado e coloque a cereja com fondant sobre a gota (esse processo previne o vazamento do licor pelo fundo). Deixe o chocolate endurecer.",
+        "6 - Em seguida, banhe as cerejas por completo no chocolate, leve para a geladeira por 5 minutos para firmar. Guarde em um recipiente com tampa por pelo menos 10 dias antes de consumir."
+      ],
+      "rendimento": "50 bombons.",
+      "tempoDePreparo": "40 minutos",
+      "categoria": "doces",
+      "imagem": "bombomCereja.jpg"
+    },
+    {
+      "id": 3,
+      "titulo": "Folhado de Camarão",
+      "ingredientes": [
+        "2 retângulos de Massa Folhada com cerca de 150g cada, 1 cm de espessura, com 16cm de comprimento e 9cm de largura",
+        "250 g de camarões frescos ou descongelados",
+        "1 colher de sopa e meia de manteiga",
+        "1 dente de alho picado",
+        "60 ml de whisky",
+        "Meia cebola picada finamente",
+        "1 colher de sopa bem cheia de farinha de trigo com fermento",
+        "200 ml de leite",
+        "100 ml de natas",
+        "2 raminhos de salsa",
+        "1 folha de louro",
+        "1 malagueta",
+        "Salsa picada",
+        "1 ovo batido para pincelar",
+        "Sumo de limão",
+        "Sal à gosto "
+      ],
+      "modoDePreparo": [
+        "1 - Descasque os camarões, rejeite a tripa e guarde as cascas e as cabeças. Numa panela com 600 ml de água a ferver, tempere com sal. Junte a folha de louro, a malagueta, o raminho de salsa, as cascas e as cabeças dos camarões. Mexa e deixe cozinhar em lume médio durante 20 minutos até que o caldo reduza para metade.",
+        "2 -  Com a ajuda de uma faca, marque uma moldura com 1cm de diâmetro em cada retângulo de massa folhada. Coloque a massa num tabuleiro de ir ao forno forrado com papel vegetal. Pincele cada retângulo com ovo batido. Se quiser, decore o centro de cada retângulo com figuras feitas em massa folhada e pincele novamente. Leve a massa folhada ao forno pré-aquecido nos 170º e deixe cozer durante 40 minutos.",
+        "3 - Depois do caldo ter reduzido para metade, coe-o numa rede fina.",
+        "4 - Numa frigideira, leve ao lume metade da manteiga e metade do alho. Deixe aquecer um pouco e junte os camarões. Tempere com umas pedrinhas de sal. Quando estiver bem quente, regue com o whisky. Puxe-lhe o fogo. Deixe flamejar em lume forte até que a chama se extinga. Deixe os camarões saltear mais um pouco até que ganhem cor. Regue com um pouco de sumo de limão e salpique-os com salsa picada. Mexa e retire do lume. Tenha atenção especial para não deixar passar demasiado os camarões.",
+        "5 - Em um tacho, leve ao lume a restante manteiga, a cebola e o restante alho. Mexa e deixe refogar sem deixar alourar. Ao refogado junte a farinha e misture bem. Aos poucos e enquanto mexe, junte 150 ml de caldo de cozer o camarão, o leite e as natas. Quando começar a borbulhar, junte o camarão e mais um pouco de salsa picada. Mexa e retire.",
+        "6 - Depois da massa folhada cozida, retire. Passe com uma faca à volta de cada tampa e retire-a. Recheie com retângulo com metade do recheio e cubra-o novamente com a tampa.",
+        "7 - Acompanhe esta refeição com uma salada fresca."
+      ],
+      "rendimento": "2 porções.",
+      "tempoDePreparo": "60 minutos",
+      "categoria": "salgados",
+      "imagem": "folhado.jpg"
+    },
+    {
+      "id": 4,
+      "titulo": "Geleia de Morango com Pimenta da Anna Terrao",
+      "ingredientes": [
+        "750 g de morangos cortados em cubos",
+        "8 colheres de sopa de açúcar cristal",
+        "2 pimentas dedo-de-moça",
+        "1⁄2 limão espremido",
+        "Pão artesanal italiano",
+        "Pão artesanal de grãos"
+      ],
+      "modoDePreparo": [
+        "1 - Misture todos os ingredientes da geleia, reservando apenas 250g de morangos, em uma panela em fogo baixo, mexendo sempre.",
+        "2 - Depois que a mistura já estiver com uma textura mais cremosa, adicione os 250g de morangos e deixar cozinhar por mais alguns minutos antes de desligar o fogo.",
+        "3 - Deixe a geleia esfriar, coloque na geladeira até a hora de servir."
+      ],
+      "rendimento": "1 porção.",
+      "tempoDePreparo": "50 minutos",
+      "categoria": "doces",
+      "imagem": "geleia.jpg"
+    },
+    {
+      "id": 5,
+      "titulo": "Hamburquibe",
+      "ingredientes": [
+        "RECHEIO",
+        "2 colheres (sopa) de azeite1 colher (sopa) de alho picadinho100g de cebola picada500g de carne moída60g de extrato de tomate1⁄2 xícara (chá) de águaSalsinha a gostoPimenta síria a gostoSal a gosto",
+        "MASSA",
+        "150g de cebola cortada em cubos médios4 dentes de alho1 xícara (chá) de hortelã200g de trigo para quibe360ml de água fervente60ml de azeite1kg de carne moída1 xícara (chá) de tomate sem pele e sem semente cortado em cubosSal a gostoPimenta Síria a gosto",
+        "MOLHO DE IOGURTE",
+        "2 copos de iogurte natural2 colheres (sopa) de azeite1 limão (suco)Hortelã picadinho a gostoSal a gostoPimenta síria a gosto"
+      ],
+      "modoDePreparo": [
+        "1 - Coloque numa panela aquecida 2 colheres (sopa) de azeite, o alho picadinho, a cebola picadinha e refogue até murchar.Acrescente 500g de carne moída e refogue até a carne ficar soltinha e começar a dourar.Junte 60g de extrato de tomate, ½ xícara (chá) de água, salsinha, sal e pimenta síria a gosto.Abaixe o fogo e deixe cozinhar por +/- 15 minutos ou até o molho encorpar.Apague o fogo e deixe esfriar.",
+        "2 - Numa frigideira antiaderente, em fogo médio com azeite, grelhe os hamburquibes dos dois lados (+/- 12 minutos). Sirva com molho de iogurte com hortelã. Se preferir, coloque os hamburquibe numa assadeira untada e leve ao forno pré-aquecido a 200º C por 15 minutos, virando na metade do tempo.",
+        "3 - Reserve.",
+        "4 - MASSA",
+        "5 - Num processador coloque a cebola cortada em cubos médios, o alho, e as folhas de hortelã e bata até obter uma pasta.Reserve.Numa tigela coloque o trigo para quibe, a pasta reservada acima, a água fervente e deixe coberto com um prato por +/- 1 hora ou até esfriar.Depois junte o azeite, a carne moída, o tomate sem pele picado, sal e pimenta síria a gosto.Misture bem.Pegue metade da massa, abra entre dois plásticos e corte discos (com 10cm de diâmetro e 0,5cm de espessura).Coloque uma porção do recheio no centro de um disco e cubra outro disco.Feche bem a borda modelando como um hambúrguer.Repita o mesmo procedimento com a outra metade da massa.Numa frigideira antiaderente, em fogo médio com azeite, grelhe os hamburquibes dos dois lados (+/- 12 minutos).Sirva com molho de iogurte com hortelã.Se preferir, coloque os hamburquibe numa assadeira untada e leve ao forno pré-aquecido a 200º C por 15 minutos, virando na metade do tempo.",
+        "6 - MOLHO DE IOUGURTE",
+        "7 - Numa tigela coloque o iogurte natural, o suco de 1 limão, hortelã, sal, pimenta síria e azeite.Misture bem."
+      ],
+      "rendimento": "10 hamburquibe",
+      "tempoDePreparo": "50 minutos",
+      "categoria": "salgados",
+      "imagem": "hamburquibe.jpg"
+    },
+    {
+      "id": 6,
+      "titulo": "Paleta de boi Assada",
+      "ingredientes": [
+        "1 peça de Paleta (2 kg)",
+        "2 colheres (sopa) de sal",
+        "3 dentes de alho amassados",
+        "Meia xícara (chá) de bacon picado",
+        "Meia xícara (chá) de azeitonas pretas picadas (50 g)",
+        "Meia xícara (chá) de maionese",
+        "2 xícaras (chá) de vinho branco seco",
+        "4 colheres (sopa) de azeite de oliva",
+        "3 xícaras (chá) de água fervente",
+        "Ramos de salsa para decorar"
+      ],
+      "modoDePreparo": [
+        "1 - Frite por 15 minutos de um lado e outro virando sempre.",
+        "2 - Espere esfriar, coloque em uma travessa.",
+        "3 - Misture a maionese com o bacon e recheie os furos da paleta.",
+        "4 - Volte para panela de pressão com todos os demais ingredientes.",
+        "5 - Coloque 2 xicaras cheias de água ferevente tampe a panela e deixe a mesma cozinhar por 20n  minutos.",
+        "6 - Retire a pressão coloque em uma travessa e finalize por mais 20n minutos no forno regando com azeite."
+      ],
+      "rendimento": "5 porções.",
+      "tempoDePreparo": "50 minutos.",
+      "categoria": "carnes",
+      "imagem": "paleta_de_boi.jpg"
+    },
+    {
+      "id": 7,
+      "titulo": "Pão Árabe de Micro-ondas",
+      "ingredientes": [
+        "1 envelope de fermento biológico seco",
+        "300 mililitros ou 1 xícara de chá mais um quarto de água morna",
+        "1 colher de sopa de açúcar",
+        "1 colher de chá de sal",
+        "1 xícara de café ou 50 mililitros de óleo",
+        "550 gramas ou 4 xícaras de chá de farinha de trigo"
+      ],
+      "modoDePreparo": [
+        "1 - Em uma tigela grande, dissolva 1 envelope de fermento seco em 300 mililitros de água morna.",
+        "2 - Adicione 1 colher de sopa de açúcar , 1 colher de chá de sal, 1 xícara de café de óleo e misture.",
+        "3 - Acrescente, aos poucos, 550 gramas de farinha de trigo e sove bem a massa. Em seguida, deixe crescer dentro de uma tigela coberta com pano por cerca de 1 hora ou até dobrar de volume.",
+        "4 - Divida a massa em 12 bolinhas iguais e faça discos não muito finos, de 24 centímetros de diâmetro, com auxilio de um rolo.",
+        "5 - Coloque um disco no prato do micro-ondas e leve ao forno micro-ondas por 30 segundos em potência alta.",
+        "6 - Em seguida, vire o disco e leve por mais 30 segundos na mesma potência.",
+        "7 - Repita o mesmo procedimento com o restante dos discos. Sirva em seguida.",
+        "8 - Para fazer torrada: após tirar a massa do micro-ondas, com ajuda de uma faca marque as fatias superficialmente na massa e tempere a gosto com sal grosso, alecrim, páprica, pimenta caiena, pimenta do reino moída, azeite. Leve novamente ao micro-ondas em potência alta de 1 em 1 minuto até ficar crocante, cerca de 2 a 3 minutos. Sirva em seguida."
+      ],
+      "rendimento": "12 porções.",
+      "tempoDePreparo": "20 minutos.",
+      "categoria": "massas",
+      "imagem": "pao_arabe.jpg"
+    },
+    {
+      "id": 8,
+      "titulo": "Peixe Delícia de Olinda da Eliane",
+      "ingredientes": [
+        "4 filés de peixe branco limpo (aproximadamente 120g cada)",
+        "8 bananas pacovã, prata ou nanica maduras e firmes",
+        "12 fatias de queijo-manteiga (o suficiente para cobrir a forma de acordo com a montagem abaixo)",
+        "1 colher de sopa de margarina",
+        "Sal",
+        "Pimenta-do-reino",
+        "Azeite",
+        "Açúcar",
+        "Canela em pó"
+      ],
+      "modoDePreparo": [
+        "1 - Tempere o peixe com sal e pimenta-do-reino e deixe pegar gosto por duas horas na geladeira.",
+        "2 - Em uma frigideira antiaderente (de preferência com tampa), coloque um fio de azeite e frite o peixe.",
+        "3 - Em outra frigideira, coloque a bananas partidas ao meio no sentido do comprimento e doure-as com a margarina. Reserve.",
+        "4 - Em uma forma refratária, monte da seguinte forma: uma camada de peixe, uma camada de banana, uma camada de queijo e repita novamente.",
+        "5 - Polvilhe com canela e levemente com açúcar. Leve ao forno 220 graus. Espere o queijo derreter e sirva imediatamente."
+      ],
+      "rendimento": "4 porções.",
+      "tempoDePreparo": "50 minutos.",
+      "categoria": "carnes",
+      "imagem": "Peixe_delicia_de_olinda.jpg"
+    },
+    {
+      "id": 9,
+      "titulo": "Petisco de pão",
+      "ingredientes": [
+        "PETISCO DE PÃO",
+        "1⁄4 xícara (chá) de azeite1⁄2 xícara (chá) de cebola picadinha1 colher (sopa) de alho picadinho1⁄2 colher (sopa) de páprica picante1⁄2 colher (sopa) de açafrão1⁄2 xícara (chá) de polpa de tomateTomilho debulhadoSal a gosto4 pães franceses cortados em cubos médios (+/- 5 xícaras de chá)",
+        "OVO POCHÊ SEM ERRO",
+        "1 ovoAzeite para untar"
+      ],
+      "modoDePreparo": [
+        "1 - PETISCO DE PÃO",
+        "2 - Em uma frigideira com ¼ xícara (chá) de azeite, refogue ½ xícara (chá) de cebola picadinha e 1 colher (sopa) de alho picadinhoAdicione ½ colher (sopa) de páprica picante, ½ colher (sopa) de açafrão, ½ xícara (chá) de polpa de tomate, tomilho debulhado e sal a gostoRefogue até ferverAcrescente 4 pães franceses cortados em cubos médiosMisture até envolver os cubosDesligue o fogo e transfira os cubos de pão para uma assadeira rasaLeve ao forno alto preaquecido a 180°C por cerca de 30 minutos ou até secarRetire do forno e sirva a seguir com ovo pochê ou frito",
+        "3 - OVO POCHÊ SEM ERRO",
+        "4 - Unte com azeite um potinho de cerâmica pequeno e despeje 1 ovo sem cascaColoque o potinho em uma frigideira com água fervente de modo que a água não ultrapasse a metade do potinhoDeixe que o ovo cozinhe por 3 minutos até que a clara fique bem cozida e a gema moleTempere com sal e pimenta-do-reino moídaDesenforme com a ajuda da ponta de uma facaSirva com o petisco de pão"
+      ],
+      "rendimento": "4 porções.",
+      "tempoDePreparo": "50 minutos.",
+      "categoria": "vegano",
+      "imagem": "petisco_de_pao.jpg"
+    },
+    {
+      "id": 10,
+      "titulo": "Taça de Chocolate com Pimenta",
+      "ingredientes": [
+        "Creme de chocolate",
+        "3 gemas",
+        "1/3 xícara (chá) de açúcar",
+        "1 xícara (chá) de creme de leite fresco",
+        "100g de chocolate meio amargo picado",
+        "Crocante",
+        "1 colher (sopa) de manteiga",
+        "¼ xícara (chá) de nozes picadinhas",
+        "1 ½ colher (sopa) de açúcar",
+        "2 colheres (sopa) de farinha de trigo",
+        "Chantilly de pimenta",
+        "200ml de creme de leite fresco",
+        "20g de açúcar de confeiteiro",
+        "1 colher (chá) de molho de pimenta",
+        "12 cerejas em calda  "
+      ],
+      "modoDePreparo": [
+        "1 - Creme",
+        "2 - Numa tigela coloque 3 gemas e 1/3 xícara (chá) de açúcar e bata bem até formar uma mistura fofa. Reserve.",
+        "3 - Coloque numa panela 1 xícara (chá) de creme de leite fresco e 100g de chocolate meio amargo picado e leve ao fogo médio até derreter o chocolate.",
+        "4 - Retire a panela do fogo e adicione a mistura de gemas (reservada acima) e misture bem. Leve a panela novamente ao fogo baixo mexendo sempre por 1 minuto. Retire do fogo e deixe esfriar. Coloque a mistura de chocolate em taças e leve a geladeira por cerca de 1 hora.",
+        "5 - Crocante",
+        "6 - Numa frigideira coloque 1 colher (sopa) de manteiga, ¼ xícara (chá) de nozes picadinhas, 1 ½ colher (sopa) de açúcar e 2 colheres (sopa) de farinha de trigo e leve ao fogo médio, mexendo sempre por mais ou menos 3 minutos ou até dourar. Retire do fogo e deixe esfriar.",
+        "7 - Chantilly",
+        "8 - Coloque na batedeira 200ml de creme de leite fresco, 20g de açúcar de confeiteiro e 1 colher (chá) de molho de pimenta e bata bem até que a mistura fique firme. Reserve.",
+        "9 - Montagem ",
+        "10 - Em cada taça coloque 3 cerejas introduzindo-as dentro do creme de chocolate. Coloque sobre o creme de chocolate uma porção de crocante de nozes. Cubra com o chantilly de pimenta e sirva em seguida. "
+      ],
+      "rendimento": "4 porções.",
+      "tempoDePreparo": "30 minutos.",
+      "categoria": "doces",
+      "imagem": "taca_de_chocolate_com_pimenta.jpg"
+    },
+    {
+      "id": 11,
+      "titulo": "Carbonara light",
+      "ingredientes": [
+        "1 fio de óleo",
+        "125 g de bacon picadinho",
+        "1 xícara de chá de creme de couve-flor",
+        "1 xícara de chá de água",
+        "250 g de macarrão cozido",
+        "1 gemasalsinha picado a gosto"
+      ],
+      "modoDePreparo": [
+        "1 - Em uma frigideira com 1 fio de óleo refogue 125g de bacon picadinho até dourar.",
+        "2 - Retire o bacon.",
+        "3 - Coloque em papel absorvente.",
+        "4 - Reserve.",
+        "5 - Escorra o excesso de óleo da frigideira.",
+        "6 - Adicione na frigideira 1 xícara (chá) de creme de couve-flor, 1 xícara (chá) de água, misture e deixe ferver.",
+        "7 - Acrescente 250 g de macarrão cozido \"al dente\", metade do bacon dourado (reservado acima) e misture.",
+        "8 - Apague o fogo, junte, 1 gema e misture rapidamente.",
+        "9 - Sirva em seguida polvilhando o restante do bacon dourado e salsinha picadinha a gosto."
+      ],
+      "rendimento": "1 porção.",
+      "tempoDePreparo": "30 minutos.",
+      "categoria": "massas",
+      "imagem": "carbonara_light.jpg"
+    },
+    {
+      "id": 12,
+      "titulo": "Frango Grelhado com Salada de Chuchu",
+      "ingredientes": [
+        "1 kg de chuchu descascado e fatiado finamenteSal a gostoAzeiteHortelã picadinhaPimenta dedo-de-moça sem sementes e picadinha a gosto50 g de bacon picadinho3 rodelas de abacaxi (+/- 2 cm) sem o miolo, cortadas em cubos pequenosHortelã picadinha a gosto100g de manteiga2 colheres (sopa) de tempero de limão com pimenta1 fio de azeite800g de filé de frango (4 peitos) temperado com sal e azeite200ml de água aproximadamente",
+        "TEMPERO DE LIMÃO COM PIMENTA (LEMON PEPPER)",
+        "1 colher (sopa) de raspas da casca de limão1⁄2 colher (chá) de pimenta-do-reino moída1 colher (chá) de glutamato monossódico1 colher (café) de cúrcuma"
+      ],
+      "modoDePreparo": [
+        "1 - FRANGO",
+        "2 - Em uma peneira coloque 1 kg de chuchu descascado e fatiado finamente, sal a gosto e deixe por pelo menos 30 minutos para desidratarEm seguida transfira o chuchu para um pano e seque bemColoque numa tigela e tempere com azeite, hortelã picadinha e pimenta dedo-de-moça sem sementes e picadinha a gostoReserveEm uma frigideira antiaderente refogue 50 g de bacon picadinho e quando estiver dourado retire e reserveNa mesma frigideira, doure 3 rodelas de abacaxi (+/- 2 cm) sem o miolo, cortadas em cubos pequenos, junte o bacon frito, hortelã picadinha a gosto e reserve em uma tigela misture 100 g de manteiga e 1 colher (sopa) de tempero seco de limão com pimentaReserve na geladeiraNa mesma frigideira aqueça 1 fio de azeite e grelhe 800 g de filé de frango temperado com sal e azeite, pingando água se necessário para não queimarQuando o filé estiver cozido, retire da frigideira e jogue água para soltar o \"agarradinho\" do fundo da frigideiraDespeje, aos poucos, esse caldo sobre a manteiga temperada (reservada acima), misturando bem até obter um molho cremosoFatie na diagonal os filés de frango grelhados e despeje o molho sobre elesSirva com o abacaxi refogado com bacon e a salada de chuchu",
+        "3 - TEMPERO DE LIMÃO COM PIMENTA (LEMON PEPPER)",
+        "4 - Coloque sobre uma assadeira, 1 folha de papel alumínio e 1 colher (sopa) de raspas da casca de limãoLeve ao forno baixo pré-aquecido a 100°C por +/- 15 minutos, mexendo de vez em quandoRetire do fornoEm uma tigela, coloque ½ colher (chá) pimenta-do-reino moída, 1 colher (chá) de glutamato monossódico, 1 colher (café) de cúrcuma, as raspas de limão (reservadas acima), misture e utilize em seguida."
+      ],
+      "rendimento": "4 porções.",
+      "tempoDePreparo": "30 minutos.",
+      "categoria": "carnes",
+      "imagem": "frango_grelhado_com_salada_de_chuchu.jpg"
+    },
+    {
+      "id": 13,
+      "titulo": "Pão de queijo maravilhoso",
+      "ingredientes": [
+        "1 xícara (chá) de óleo (240 ml)",
+        "1 xícara (chá) de água (240 ml)",
+        "1 xícara (chá) de leite (240 ml)",
+        "2 de sal",
+        "1 de polvilho doce",
+        "4 ovos",
+        "300g de queijo minas padrão ralado no ralo fino (3 xícaras de chá)",
+        "100g de queijo parmesão ralado no ralo fino (1 ½ xícara de chá)"
+      ],
+      "modoDePreparo": [
+        "1 - Em uma panela coloque 1 xícara (chá) de óleo, 1 xícara (chá) de água, 1 xícara (chá) de leite e 2 colheres (sopa) de sal e aqueça em fogo médio até ferver.",
+        "2 - Em uma tigela coloque 1 kg de polvilho doce, abra um buraco no meio do polvilho e despeje a mistura de leite fervente (feita acima) por todo o polvilho.",
+        "3 - Com uma colher misture rapidamente o leite quente no polvilho até escaldar.",
+        "4 - Em seguida acrescente de 4 ovos, 300 g de queijo minas padrão ralado no ralo fino, 100 g de queijo parmesão ralado no ralo fino e vá misturando até incorporar todos os ingredientes e a massa ficar lisa.",
+        "5 - Com uma colher pegue pequenas porções de massa, faça bolinhas e coloque numa assadeira.",
+        "6 - Dica: você pode congelar neste momento e depois guardar em saquinhos ou levar para assar em forno médio preaquecido a 200°C por cerca de 30 minutos ou até dourar. Retire do forno e sirva em seguida."
+      ],
+      "rendimento": "4 porções.",
+      "tempoDePreparo": "45 minutos.",
+      "categoria": "massas",
+      "imagem": "pao_de_queijo_maravilhoso.jpg"
+    },
+    {
+      "id": 14,
+      "titulo": "Risole de abóbora",
+      "ingredientes": [
+        "RECHEIO ",
+        "1 colher (sopa) de óleo",
+        "500g de carne seca dessalgada, cozida e desfiada (cozida na pressão por 40 minutos com 2 litros de água)",
+        "1⁄2 xícara (chá) de cebola picada (80g)",
+        "1 colher (café) de alho picado Salsa picadinha a gosto",
+        "MASSA ",
+        "2 colheres (sopa) de óleo",
+        "1 xícara (chá) de cebola picada (160g)",
+        "2 colheres (chá) de alho picado",
+        "1 Kg de abóbora cortada em cubos pequenos (cerca de 6 xícaras de chá)",
+        "1 litro de água do cozimento da carne seca",
+        "2 colheres (sopa) de margarina (30g)",
+        "3 xícaras (chá) de farinha de trigo (480g)",
+        "MONTAGEM ",
+        "Requeijão cremoso a gosto",
+        "3 ovos batidos para empanar",
+        "Farinha de rosca a gosto para empanar"
+      ],
+      "modoDePreparo": [
+        "1 - RECHEIO",
+        "2 - Em uma panela em fogo médio com 1 colher (sopa) de óleo refogue 500 g de carne seca dessalgada e desfiada, ½ xícara (chá) de cebola picada, 1 colher (café) de alho picado até dourar.",
+        "3 - Retire do fogo, adicione salsa picadinha a gosto, misture e deixe esfriar.",
+        "4 - MASSA",
+        "5 - Coloque em outra panela, em fogo médio, 2 colheres (sopa) de óleo, 1 xícara (chá) de cebola picada, 2 colheres (chá) de alho picado e refogue.",
+        "6 - Adicione 1 kg de abóbora cortada em cubos pequenos, 1 litro de água do cozimento da carne seca e deixe cozinhar até reduzir toda a água (cerca de 30 minutos). Em seguida, misture bem até desmanchar a abóbora.",
+        "7 - Acrescente 2 colheres (sopa) de margarina, 3 xícaras (chá) de farinha de trigo e misture bem, até soltar do fundo da panela.",
+        "8 - Retire do fogo e deixe esfriar.",
+        "9 - OBS: Se necessário acrescente sal a gosto.",
+        "10 - MONTAGEM",
+        "11 - Depois de fria, abra a massa de abóbora (feita acima) entre 2 sacos plásticos.",
+        "12 - Com um copo, corte discos de massa.",
+        "13 - Sobre cada disco coloque uma porção de requeijão cremoso, uma porção de recheio de carne seca (reservado acima) e dobre no formato de meia lua apertando bem, formando o risole.",
+        "14 - Em seguida, passe os risoles nos ovos batidos e na farinha de rosca.",
+        "15 - Frite em óleo quente até dourar.",
+        "16 - Retire e escorra em papel absorvente. Sirva em seguida."
+      ],
+      "rendimento": "20 porções.",
+      "tempoDePreparo": "55 minutos.",
+      "categoria": "salgados",
+      "imagem": "risole_de_abobora_com_carne_seca.jpg"
+    },
+    {
+      "id": 15,
+      "titulo": "Chutney de Caju",
+      "ingredientes": [
+        "1 fio de azeite",
+        "2 cebolas fatiadas",
+        "1 pimentão vermelho pequeno fatiado",
+        "2 pimentas-de-cheiro verdes fatiadas",
+        "1 pau de canela pequeno",
+        "250 g de caju",
+        "sal a gosto",
+        "Gotas de molho de pimenta"
+      ],
+      "modoDePreparo": [
+        "1 - Em uma panela com 1 fio de azeite, refogue 2 cebolas fatiadas, 1 pimentão vermelho pequeno fatiado, 2 pimentas-de-cheiro verdes fatiadas e 1 pau de canela pequeno.",
+        "2 - Junte 250 g de doce de caju,",
+        "3 - Mexa",
+        "4 - Acerte o sal",
+        "5 - Coloque gotas de molho de pimenta e sirva com peixe assado."
+      ],
+      "rendimento": "2 porções.",
+      "tempoDePreparo": "30 minutos.",
+      "categoria": "vegano",
+      "imagem": "chutney_de_caju.jpg"
+    },
+    {
+      "id": 16,
+      "titulo": "Batatas coradas",
+      "ingredientes": [
+        " 2 kg de batatas em cubos",
+        " ½ kg de cebola branca (ou roxa)",
+        " 1 kg de tomate italiano sem sementes e pele cortado em tiras",
+        " Sal e pimenta-do-reino a gosto",
+        " Óleo"
+      ],
+      "modoDePreparo": [
+        "1 - Numa assadeira coloque 2 kg de batatas em cubos, ½ kg de cebola branca (ou roxa), 1 kg de tomate  italiano sem sementes e pele cortado em tiras tempere com sal e pimenta-do-reino a gosto e regue óleo. Leve ao forno médio pré-aquecido a 180°C por +/- 3 horas."
+      ],
+      "rendimento": "1 porções.",
+      "tempoDePreparo": "180 minutos.",
+      "categoria": "vegano",
+      "imagem": "batatas_coradas.jpg"
+    },
+    {
+      "id": 17,
+      "titulo": "Salada de frutas de forno",
+      "ingredientes": [
+        " 1/3 xícara (chá) de manteiga em temperatura ambiente (75g)",
+        " ¼ xícara (chá) de açúcar (55g)",
+        " 1 pitada de sal",
+        " ¼ xícara (chá) de leite (60 ml)",
+        " ½ xícara (chá) de farinha de trigo (90g)",
+        " ½ colher (chá) de fermento em pó",
+        " 400 g de frutas picadas (pêssegos em calda, morango, maçã, banana, kiwi)",
+        " 1/3 xícara (chá) de açúcar misturado com 1 colher (chá) de amido de milho",
+        " ½ xícara (chá) de água fervente"
+      ],
+      "modoDePreparo": [
+        "1 - Em uma batedeira coloque 1/3 xícara (chá) de manteiga em temperatura ambiente, ¼ xícara (chá) de açúcar, 1 pitada de sal e bata bem até formar uma mistura fofa e esbranquiçada. Adicione ¼ xícara (chá) de leite, ½ xícara (chá) de farinha de trigo e bata até formar uma massa homogênea. Desligue a batedeira, acrescente ½ colher (chá) de fermento em pó, misture e reserve.",
+        "2 - Em xícaras de chá untadas com manteiga coloque 4 colheres (sopa) de frutas picadas. Em seguida, coloque ¼ xícara (chá) de massa (feita acima) espalhando bem com as costas de uma colher. Por xícara coloque na superfície 1 colher (sopa) de açúcar misturado com amido de milho e cubra com 1 colher (sopa) de água fervente. Leve para assar em forno médio preaquecido a 180°C por cerca de 40 minutos ou até dourar. Retire do forno e sirva em seguida."
+      ],
+      "rendimento": "4 porções.",
+      "tempoDePreparo": "60 minutos.",
+      "categoria": "vegano",
+      "imagem": "salada_de_frutas_de_forno.jpg"
+    },
+    {
+      "id": 18,
+      "titulo": "Molho Rose",
+      "ingredientes": [
+        "2 colheres sopa de catchup",
+        "1 colher sopa de mostarda",
+        "1 colher sopa de limão",
+        "Molho inglês a gosto",
+        "200g de maionese light"
+      ],
+      "modoDePreparo": [
+        "1 - Numa tigela, misture todos os ingredientes e bata por dois minutos até formar um creme liso e homogêneo.",
+        "2 - Sirva com qualquer tipo de salada."
+      ],
+      "rendimento": "1 porções.",
+      "tempoDePreparo": "5 minutos.",
+      "categoria": "molhos",
+      "imagem": "molho_rose.jpg"
+    },
+    {
+      "id": 19,
+      "titulo": "Molho barbecue caseiro",
+      "ingredientes": [
+        "1/4 xícaras de vinagre",
+        "1/4 xícaras de catchup",
+        "1 cravo",
+        "3 colheres de açucar",
+        "3 colheres de sobremesa de molho shoyu",
+        "2 colheres de azeite",
+        "1 alho batido",
+        "1 cebola",
+        "1 colher de sobremesa de suco de limão"
+      ],
+      "modoDePreparo": [
+        "1 - Refogue o alho e a cebola no óleo.",
+        "2 - Junte todos os outros ingredientes e espere encorporar.",
+        "3 - Bom apetite!"
+      ],
+      "rendimento": "1 porções.",
+      "tempoDePreparo": "5 minutos.",
+      "categoria": "molhos",
+      "imagem": "molho_barbecue_caseiro.jpg"
+    },
+    {
+      "id": 20,
+      "titulo": "Molho tartaro",
+      "ingredientes": [
+        "1 lata de creme de leite",
+        "2 colheres de sopa de suco de limão",
+        "1 colher de cebola picada",
+        "1 colher de mostarda",
+        "2 colheres de sopa de picles ou pepino picados",
+        "1⁄2 colher de salsinha picada",
+        "3 colheres de sopa de maionese"
+      ],
+      "modoDePreparo": [
+        "1 - Em uma panela, coloque a cebola e o óleo. Refogue até dourar a cebola.",
+        "2 - Acrescente os demais ingredientes. Deixe ferver por 10 minutos, aproximadamente, ou até engrossar o caldo.",
+        "3 - Em uma tigela, coloque o creme de leite sem soro, a maionese, a salsinha, a cebola, a mostarda, o picles ou o pepino e misture bem.",
+        "4 - Se a consistência ficar muito grossa, bata no liquidificador."
+      ],
+      "rendimento": "1 porções.",
+      "tempoDePreparo": "5 minutos.",
+      "categoria": "molhos",
+      "imagem": "molho_tartaro.jpg"
+    },
+    {
+      "id": 21,
+      "titulo": "Molho bearnaise",
+      "ingredientes": [
+        " 4 cebolas roxas picadas",
+        " 2 colheres de sopa de estragão",
+        " 1 raminho de tomilho",
+        " 1 folha de louro",
+        " 4 colheres de sopa de vinagre de vinho branco",
+        " 4 colheres de sopa de vinho branco",
+        " 2 gemas",
+        " 125 gramas de manteiga gelada em pedacinhos"
+      ],
+      "modoDePreparo": [
+        "1 - Leve ao fogo, em uma panela pequena, a cebola, a pimenta, 1 colher (sopa) de estragão, o tomilho, a folha de louro, o vinho branco, o vinagre e o sal. Deixe reduzir o líquido, até que sobre apenas 1 colher de sopa. Peneire.",
+        "2 - Em uma panela ou tigela, misture as gemas com o líquido reduzido. Leve ao banho maria e, sempre batendo, acrescente aos poucos a manteiga em pedacinhos, até que forme um molho consistente.",
+        "3 - Retire do fogo e acrescente o restante de estragão e gotas de limão."
+      ],
+      "rendimento": "1 porções.",
+      "tempoDePreparo": "5 minutos.",
+      "categoria": "molhos",
+      "imagem": "molho_bearnaise.jpg"
+    },
+    {
+      "id": 22,
+      "titulo": "Suflê de Doce de Leite do chef Rafael Despirite",
+      "ingredientes": [
+        "Ingredientes para a massa:",
+        "500ml de leite'",
+        "6 gemas",
+        "95g de açúcar",
+        "100g de farinha de trigo",
+        "1 colher (sopa) de manteiga",
+        "Ingredientes para o Suflê:",
+        "7 claras",
+        "40g de açúcar",
+        "150g da massa",
+        "150g de doce de leite",
+        "Manteiga e açúcar para untar"
+      ],
+      "modoDePreparo": [
+        "1 - Em uma panela, em fogo médio, misture todos os ingredientes da massa, mexa bem e leve ao fogo baixo até obter um creme.",
+        "2 - À parte, bata as claras em neve com o açúcar. Em um recipiente, coloque a massa, o açúcar, o doce de leite e misture com a ajuda de um fouet.",
+        "3 - Por último, acrescente as claras e misture delicadamente.",
+        "4 - Unte a forma para suflê com manteiga e polvilhe o açúcar.",
+        "5 - Coloque a mistura de suflê na forma e passe a pontinha do dedão na beirada da forma para ajudar o suflê a crescer.",
+        "6 - Asse em banho-maria em forno preaquecido a 200 graus até o suflê ficar firme e douradinho."
+      ],
+      "rendimento": "2 porções.",
+      "tempoDePreparo": "30 minutos.",
+      "categoria": "molhos",
+      "imagem": "sufle_de_doce_de_leite.jpg"
+    },
+    {
+      "id": 23,
+      "titulo": "Lasanha caseira",
+      "ingredientes": [
+        "15 tiras de massa para lasanha cozida \"al dente\" (375g)",
+        "350 g de muçarela fatiada e cortada em tiras da largura da tira da massa",
+        "Sugestão de recheios para cada rolinho:",
+        "1 colher (sopa cheia) de carne moída temperada e refogada",
+        "1 colher (sopa cheia) de frango temperado e refogado",
+        "1 tira de berinjela e 1 tira de abobrinha grelhadas",
+        "1 colher (sopa cheia) de presunto",
+        "1 colher (sopa cheia) de ricota com espinafre",
+        "Molho:",
+        "1 ½ xícara (chá) de molho de tomate (360g)",
+        "1 ½ xícara (chá) de creme de leite de caixinha (300g)",
+        "¾ xícara (chá) de leite (180ml)",
+        "Pimenta-do-reino e sal a gosto",
+        "Queijo parmesão ralado a gosto"
+      ],
+      "modoDePreparo": [
+        "1 – Coloque uma tira de massa de lasanha cozida \"al dente\" em uma superfície lisa e passe um papel absorvente para secar. Sobre a tira de massa coloque duas tiras de muçarela e, em seguida, 1 colher (sopa) do recheio de sua preferência e enrole até o final da tira. Repita a operação com o restante dos ingredientes e o sabor de recheio que desejar.",
+        "2 – Em uma tigela, coloque 1 ½ xícara (chá) de molho de tomate, 1 ½ xícara (chá) de creme de leite de caixinha, ¾  xícara (chá) de leite, pimenta-do-reino e sal a gosto e misture.",
+        "3 - Cubra o fundo de um prato ou travessa (que possa ir ao forno) com metade do molho de tomate (feito acima), por cima arrume os rolinhos, um ao lado do outro, regue com o restante do molho de tomate e salpique queijo parmesão ralado a gosto em cada rolinho de massa. Leve para assar em forno alto pré-aquecido a 200ºC por +/- 20 minutos ou até dourar. Retire do forno e sirva em seguida."
+      ],
+      "rendimento": "6 porções.",
+      "tempoDePreparo": "40 minutos.",
+      "categoria": "massas",
+      "imagem": "lasanha_caseira.jpg"
+    },
+    {
+      "id": 24,
+      "titulo": "Nhoque de polenta",
+      "ingredientes": [
+        "500g de polenta pronta fria e amassada com um garfo",
+        "3 colheres (sopa) de farinha de trigo (1/4 xícara de chá)",
+        "2 gemas peneiradas",
+        "1 pitada de noz moscada",
+        "2 colheres (sopa) de queijo parmesão ralado",
+        "Molho simples de tomate",
+        "2 colheres (sopa) de azeite",
+        "3 dentes de alho amassados",
+        "1 cebola picadinha",
+        "1 caixa de molho de tomate (520ml)",
+        "1 lata de tomate pelado (400ml)",
+        "½ xícara (chá) de água",
+        "Folhas de manjericão e sal a gosto",
+        "250g de mussarela de búfala em bolinhas"
+      ],
+      "modoDePreparo": [
+        "1 - Numa tigela coloque 500g de polenta pronta fria e amassada com um garfo, 3 colheres (sopa) de farinha de trigo, 2 gemas peneiradas, 1 pitada de noz moscada e 2 colheres (sopa) de queijo parmesão ralado e misture bem até obter uma massa homogênea. Em uma superfície lisa e enfarinhada, coloque a massa e amasse.",
+        "2 - Pegue pequenas porções da massa e enrole formando um cilindro com mais ou menos 2cm de espessura e 30cm de comprimento. Com uma faca corte os nhoques (aproximadamente 2cm) e vá colocando-os em uma assadeira enfarinhada.",
+        "3 - Cozinhe os nhoques em uma panela com bastante água fervente até que os nhoques subam (cerca de 1 minuto). Com uma escumadeira, retire os nhoques e coloque rapidamente em uma tigela com água fria para parar o cozimento. Despeje os nhoques em um prato e sirva com o molho de sua preferência.",
+        "4 - Molho simples de tomate ",
+        "5 - Numa panela em fogo médio coloque 2 colheres (sopa) de azeite, 3 dentes de alho amassados e 1 cebola picadinha e refogue bem até a cebola murchar. Adicione 1 caixa de molho de tomate (520ml), 1 lata de tomate pelado (400ml) e ½ xícara (chá) de água, misture e deixe ferver por 5 minutos. Acrescente folhas de manjericão e sal a gosto. Desligue o fogo, coloque 250g de mussarela de búfala em bolinhas, misture e sirva em seguida."
+      ],
+      "rendimento": "4 porções.",
+      "tempoDePreparo": "30 minutos.",
+      "categoria": "massas",
+      "imagem": "nhoque_de_polenta.jpg"
+    },
+    {
+      "id": 25,
+      "titulo": "Frango à Kiev",
+      "ingredientes": [
+        "2 filés de peitos de frango sem osso (+/- 400 g)",
+        "sal e pimenta-do-reino moída a gosto",
+        "30 g de manteiga de ervas (+/- 1 colher de sopa)",
+        "farinha de trigo- 3 ovos batidos",
+        "6 fatias de pão de forma integral ralado (180 g)",
+        "¼ xícara (chá) de azeite",
+        "Manteiga de ervas",
+        "150g de manteiga em temperatura ambiente",
+        "2 colheres (sopa) de salsinha bem picadinha",
+        "½ colher (sopa) de alecrim picadinho",
+        "½ colher (sopa) de tomilho picadinho"
+      ],
+      "modoDePreparo": [
+        "1 - Com uma faca corte 2 filés de peitos de frango sem osso no sentido do comprimento sem separar as metades. Tempere com sal e pimenta-do-reino moída a gosto. No meio de cada metade de filé coloque 15 g de manteiga de ervas, dobre os peitos de frango escondendo bem a manteiga. Em seguida, passe os filés na farinha de trigo, em 3 ovos batidos e em seguida em 6 fatias de pão de forma integral ralado.",
+        "2 - Em uma frigideira com ¼ xícara (chá) de azeite doure os peitos de frango (já empanados) por 1 minuto de cada lado. Retire do fogo e transfira-os para uma grade sobre uma assadeira e leve ao forno alto pré-aquecido a 200°C por 10 minutos. Retire do forno e sirva em seguida.",
+        "Manteiga de ervas",
+        "1 - Em uma tigela amasse 150g de manteiga em temperatura ambiente junto com 2 colheres (sopa) de salsinha bem picadinha, ½ colher (sopa) de alecrim picadinho e ½ colher (sopa) de tomilho picadinho até que todos os ingredientes estejam bem incorporados. Forme um rolinho e embrulhe num papel filme. Vá usando esta manteiga para dar sabor a grelhados, purê de batata, macarrão e torradas."
+      ],
+      "rendimento": "2 porções.",
+      "tempoDePreparo": "30 minutos.",
+      "categoria": "carnes",
+      "imagem": "frango_a_kiev.jpg"
+    }
+  ]
+}
