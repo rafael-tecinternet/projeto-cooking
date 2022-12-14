@@ -1,0 +1,17 @@
+             Design System.
+Tópicos:Tipografia,Cores E Botões.
+
+
+-Tipografia:
+Nossas tipografias foram escolhidas para passar ao usuário a sensação de que ele esteja abrindo um livro de receitas, assim como era feito antigamente, trazendo uma certa familiaridade/nostalgia.
+Os textos que contiverem informações/instruções serão escritos em uma fonte simétrica, pois informações na internet não é algo que se brinque, então facilitamos a leitura para o usuário final, para que haja o mínimo de complicações para o mesmo.
+
+-Cores:
+Nossas cores foram selecionadas com o intuito de transmitir confiança, alegria, fidelidade, família e triunfo,
+
+Todas essas características são necessárias ou remetem à alguma sensação que são necessárias quando você prepara um almoço.(Eu não gostaria de cozinhar triste, muito menos desconfiante, e com certeza eu saborearia o triunfo do meu prato.👨🏻‍🍳
+E agora que já dei argumentos plausíveis, digo que a cor será o laranja pois nele temos todas essas propriedades, que inconscientemente espero que nos ajudem com nossos usuários.
+
+-Botões: 
+Bom na hora de escolher os botões é bem complicado pois precisamos ultilizar um sinalizador para o usuário que ornamente nossa tela harmonizando com a nossa cor de destaque, o verde foi uma boa pedida, pois é bem sutil e traz uma certa leveza, e até um tom saudável para a aplicação, os botões estão em tons de verdes variados, juntos com a cor em que cada texto foi escrito, de um branco levemente contaminado pelo verde.(Uma cor mais livre para podermos decidir onde o botão ficará. Ela passeia pela tela toda sem gerar um mau constraste com as cores que disputam a tela.
+Já o laranja é uma cor mais sólida limitando um pouco o nosso uso, só podendo aplicá-la no fundo branco; Isso ficará na responsábilidade da Palloma. 
