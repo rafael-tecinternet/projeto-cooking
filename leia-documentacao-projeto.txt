@@ -14,4 +14,7 @@ E agora que já dei argumentos plausíveis, digo que a cor será o laranja pois 
 
 -Botões: 
 Bom na hora de escolher os botões é bem complicado pois precisamos ultilizar um sinalizador para o usuário que ornamente nossa tela harmonizando com a nossa cor de destaque, o verde foi uma boa pedida, pois é bem sutil e traz uma certa leveza, e até um tom saudável para a aplicação, os botões estão em tons de verdes variados, juntos com a cor em que cada texto foi escrito, de um branco levemente contaminado pelo verde.(Uma cor mais livre para podermos decidir onde o botão ficará. Ela passeia pela tela toda sem gerar um mau constraste com as cores que disputam a tela.
-Já o laranja é uma cor mais sólida limitando um pouco o nosso uso, só podendo aplicá-la no fundo branco; Isso ficará na responsábilidade da Palloma. 
+Já o laranja é uma cor mais sólida limitando um pouco o nosso uso, só podendo aplicá-la no fundo branco; Isso ficará na responsábilidade da Palloma.
+
+PS:.
+As cores de ênfase serão usadas apenas em efeitos, como um hover, ou alguma animação se houver
