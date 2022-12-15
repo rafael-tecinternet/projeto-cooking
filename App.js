@@ -1,30 +1,62 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
-import Home from "./src/screen/Home";
+import Home from "./src/Screens/Home";
+import Buscar from "./src/Screens/Buscar";
+import Categorias from "./src/Screens/Categorias";
+import Favoritos from "./src/Screens/Favoritos";
 
 const App = () => {
-  const Stack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
   return (
     <>
       <StatusBar />
       {/* O NavigationContainer deve envolver todas as telas navegáveis do nosso APP. */}
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Home"
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: "#5451a6",
-            },
-            headerTintColor: "white",
-          }}
-        >
-          <Stack.Screen
-            component={Home}
-            name="Home"
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
+      <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor:'orange',
+        tabBarInactiveTintColor:'white',
+        tabBarStyle:{
+        position:"absolute",
+        backgroundColor: "#666666"
+      }}}>
+        <Tab.Screen name="Home" component={Home}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => {
+            return(
+            <Ionicons name="home" size={size} color={color}/>)
+          }
+        }}/>
+        <Tab.Screen name="Buscar" component={Buscar} 
+        options={{
+          tabBarIcon: ({color, size}) => {
+            return(
+            <Ionicons name="search" size={size} color={color}/>)
+          }
+        }}
+         />
+        <Tab.Screen name="Categorias" component={Categorias} 
+        options={{
+          tabBarIcon: ({color, size, focused}) => {
+    
+            return(
+              <Ionicons name="book" size={size} color={color}/>)
+            
+          }
+        }}/>
+        <Tab.Screen name="Favoritos" component={Favoritos} 
+        options={{
+          tabBarIcon: ({color, size, focused}) => {
+    
+            return(
+              <Ionicons name="star" size={size} color={color}/>)
+            
+          }
+        }}/>
+      </Tab.Navigator>
       </NavigationContainer>
     </>
   );
