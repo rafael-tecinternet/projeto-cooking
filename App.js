@@ -2,17 +2,16 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
-import Home from "./src/Screens/Home";
-import Buscar from "./src/Screens/Buscar";
-import Categorias from "./src/Screens/Categorias";
-import Favoritos from "./src/Screens/Favoritos";
+import Home from "./src/screens/Home";
+import Buscar from "./src/screens/Buscar";
+import Categorias from "./src/screens/Categorias";
+import Favoritos from "./src/screens/Favoritos";
 
 const App = () => {
   const Tab = createBottomTabNavigator();
   return (
     <>
       <StatusBar />
-      {/* O NavigationContainer deve envolver todas as telas navegáveis do nosso APP. */}
       <NavigationContainer>
       <Tab.Navigator
       screenOptions={{

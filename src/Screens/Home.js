@@ -11,7 +11,7 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
 
 const estilos = StyleSheet.create({
   container: {
