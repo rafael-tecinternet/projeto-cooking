@@ -1,13 +1,37 @@
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import serverApi from '../services/api';
+import { useParams } from 'react-router-dom';
 
 const Home = () => {
+
+  const [receitas, setReceitas] = useState([]);
+
+  useEffect(() => {
+    async function getReceitas() {
+      try {
+        const resposta = await fetch(`${serverApi}/receitas.json`);
+        const dados = await resposta.json();
+        setReceitas(dados);
+      } catch (error) {
+        console.log("Deu ruim! " + error.message);
+      }
+    }
+    getReceitas();
+    
+  }, []);
+
+
+  console.log(receitas);
   return (
+    
     <SafeAreaView style={estilos.container}>
-      <View style={estilos.viewBotoes}>
-        <Text>Olaaaa</Text>
+      <View>
+        <View style={estilos.titulo}>{receitas.id}</View>
+        <Text> </Text>
       </View>
     </SafeAreaView>
+    
   )
 }
 
@@ -15,9 +39,12 @@ export default Home;
 
 const estilos = StyleSheet.create({
   container: {
-    backgroundColor: "white",
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  }
+    flex: 1
+  },
+  titulo: {
+    color: "black",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+  
 })
