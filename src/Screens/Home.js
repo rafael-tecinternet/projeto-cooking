@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 import serverApi from "../services/api";
-import { useParams } from "react-router-dom";
 
 const Home = () => {
   const [receitas, setReceitas] = useState([]);
@@ -23,7 +22,7 @@ const Home = () => {
   return (
     <SafeAreaView style={estilos.container}>
       <View>
-        <View style={estilos.titulo}>{receitas.id}</View>
+        <View style={estilos.titulo}></View>
         <Text> </Text>
       </View>
     </SafeAreaView>
