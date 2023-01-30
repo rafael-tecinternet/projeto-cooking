@@ -1,12 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
-
+import { StyleSheet, Text, View } from "react-native";
 
 const Categorias = () => {
-  return(
-    <View><Text>Categorias</Text></View>
-  )
-}
+  return (
+    <View style={estilos.titulo}>
+      <Text></Text>
+    </View>
+  );
+};
 
-export default Categorias
+export default Categorias;
 
-const styles = StyleSheet.create({})
+const estilos = StyleSheet.create({});

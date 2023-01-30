@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  ScrollView,
+  Image,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import serverApi from "../services/api";
 
@@ -10,8 +17,24 @@ const Home = () => {
       try {
         const resposta = await fetch(`${serverApi}/receitas.json`);
         const dados = await resposta.json();
+        let listaDeReceitas = [];
+        for (const receita in dados) {
+          const objetoReceita = {
+            id: receita,
+            titulo: dados[receita].titulo,
+            ingredientes: dados[receita].ingredientes,
+            modoDePreparo: dados[receita].modoDePreparo,
+            rendimento: dados[receita].rendimento,
+            tempoDePreparo: dados[receita].tempoDePreparo,
+            categoria: dados[receita].categoria,
+            imagem: dados[receita].imagem,
+          };
+          listaDeReceitas.push(objetoReceita);
+        }
+
+        setReceitas(listaDeReceitas);
         console.log(receitas);
-        setReceitas(dados);
+        console.log(listaDeReceitas);
       } catch (error) {
         console.log("Deu ruim! " + error.message);
       }
@@ -21,10 +44,14 @@ const Home = () => {
 
   return (
     <SafeAreaView style={estilos.container}>
-      <View>
-        <View style={estilos.titulo}></View>
-        <Text> </Text>
-      </View>
+      <ScrollView>
+        {receitas.map(({ titulo, id, imagem }) => (
+          <View style={estilos.corpo}>
+            <Text style={estilos.titulo1}>{titulo}</Text>
+            <View></View>
+          </View>
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -32,12 +59,19 @@ const Home = () => {
 export default Home;
 
 const estilos = StyleSheet.create({
+  ingredientes: { flexWrap: "wrap", flexDirection: "column" },
   container: {
     flex: 1,
+    padding: 8,
+    margin: 30,
+    width: 370,
+    textAlign: "center",
   },
-  titulo: {
+  titulo1: {
     color: "black",
+    textAlign: "center",
     fontWeight: "bold",
     fontSize: 16,
+    padding: 8,
   },
 });
