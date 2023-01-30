@@ -1,6 +1,19 @@
 import { StyleSheet, Text, View, SafeAreaView, TextInput } from 'react-native'
 import React from 'react'
 
+/* A fazer na Página da Home:
+Melhor estilização geral
+fazer a barra de pesquisa funcionar
+fazer com que os blocos de conteudo exibam informações do array do db.json como em ordem:
+ID (não vai exibir porem vai identificar o ID)
+Titulo
+Ingredientes
+Modo de preparo
+Rendimento
+Tempo de preparo
+Categoria
+E por fim, exibir a imagem
+*/
 const Home = () => {
   return (
     <SafeAreaView style={estilos.container}>
