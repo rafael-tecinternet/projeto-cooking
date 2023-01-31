@@ -1,3 +1,4 @@
+import { useFonts } from "expo-font";
 import {
   StyleSheet,
   Text,
@@ -6,10 +7,14 @@ import {
   ScrollView,
   Image,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import serverApi from "../services/api";
 
 const Home = () => {
+  const [fonteCarregada] = useFonts({
+    manrope: require("../../assets/fonts/Manrope-Regular.ttf"),
+  });
+
   const [receitas, setReceitas] = useState([]);
 
   useEffect(() => {
@@ -42,11 +47,13 @@ const Home = () => {
     getReceitas();
   }, []);
 
+  if (!fonteCarregada) return <Text>Fonte sendo carregada</Text>;
+
   return (
     <SafeAreaView style={estilos.container}>
       <ScrollView>
         {receitas.map(({ titulo, id, imagem }) => (
-          <View style={estilos.corpo}>
+          <View style={estilos.corpo} key={id}>
             <Text style={estilos.titulo1}>{titulo}</Text>
             <View></View>
           </View>
@@ -71,6 +78,7 @@ const estilos = StyleSheet.create({
     color: "black",
     textAlign: "center",
     fontWeight: "bold",
+    fontFamily: "manrope",
     fontSize: 16,
     padding: 8,
   },
