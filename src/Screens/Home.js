@@ -6,7 +6,8 @@ import {
   ScrollView,
   Image,
   FlatList,
-  Item
+  Item,
+  ImageBackground
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import serverApi from "../services/api";
@@ -48,9 +49,14 @@ const Home = () => {
     <SafeAreaView style={estilos.container}>
       <ScrollView
       >
-        {receitas.map(({ titulo, id, ingredientes }) => (
+        {receitas.map(({ imagem, id, ingredientes }) => (
           <View style={estilos.corpo}>
             <Text style={estilos.titulo1}>{ingredientes}</Text>
+            <ImageBackground
+            key={id}
+              source={{uri: `assets:/images/`}}
+             style={{width: 200, height: 200}}
+            ></ImageBackground>
           </View>
           
         ))}
