@@ -1,6 +1,9 @@
-import { StyleSheet, Text, View, SafeAreaView, TextInput } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, TextInput, ImageBackground, Pressable } from 'react-native'
 import React from 'react'
 
+import { Ionicons } from "@expo/vector-icons";
+
+import ImagemAlternativa from "../../assets/images/fricasseDeFrango.jpg"
 /* A fazer na Página da Home:
 Melhor estilização geral
 fazer a barra de pesquisa funcionar
@@ -17,22 +20,35 @@ E por fim, exibir a imagem
 const Home = () => {
   return (
     <SafeAreaView style={estilos.container}>
-      <View style={estilos.viewBotoes}>
+      <View style={estilos.viewForm}>
+      
         <TextInput 
         style={estilos.barraDePesquisa}
-        placeholder="Pesquisar ingredientes"
+        placeholder="Pesquisar ingredientes"/>
+        
+        <Pressable>
+        <Ionicons name="reorder-three" size={30} color="black" />
+        </Pressable>
 
-        />
+
+        <View>
+        
+        {/* adicionar onpress no pressable e a programação */}
+        <Pressable>
+        <ImageBackground style={estilos.BlocosDeConteudo}
+        source={ImagemAlternativa}>
+        <Text style={estilos.texto}>Fricasse de frango</Text>
+        </ImageBackground>
+        </Pressable>
+
+
+        <ImageBackground style={estilos.BlocosDeConteudo}
+        source={ImagemAlternativa}>
+        <Text style={estilos.texto}>Fricasse de frango</Text>
+        </ImageBackground>
+        
         </View>
-        <Text style={estilos.viewBlocosDeConteudo}>Fricasse de frango</Text>
-
-        <Text style={estilos.viewBlocosDeConteudo}>Bolo de cenoura com cobertura de chocolate</Text>
-
-        <Text style={estilos.viewBlocosDeConteudo}>Molho mix para salada</Text>
-
-        <Text style={estilos.viewBlocosDeConteudo}>Molho Rosé</Text>
-
-        <Text style={estilos.viewBlocosDeConteudo}>Molho Barbecue</Text>
+      </View>
     </SafeAreaView>
   )
 }
@@ -52,17 +68,24 @@ const estilos = StyleSheet.create({
     marginBottom: 40,
     paddingHorizontal: 65, // extende a barra de pesquisa para os lados (horizontal)
     paddingVertical: 5,
-  }, viewBlocosDeConteudo: {
+    
+  }, BlocosDeConteudo: {
     // Aqui ele irá afetar os blocos de conteudo
     marginVertical: 15,
     backgroundColor: "gray",
     fontSize: 15,
     borderRadius: 5, // arredonda a borda
-    width: "80%",
+    width: "100%",
+    height: 150,
     alignItems: "center",
     justifyContent: "center",
-    textAlign: "center", 
     paddingTop: 15, // move o texto um pouco mais pra baixo
-    paddingBottom: 80 // extende o card/bloco para baixo
+    paddingBottom: 80, // 
+    borderWidth: 3, // aumenta a grossura da borda
+    overflow: "hidden", // faz com que a imagem não passe da borda
+  }, texto: {
+    color: "red",
+    textAlign: 'center',
+    fontSize: 18
   }
 })
