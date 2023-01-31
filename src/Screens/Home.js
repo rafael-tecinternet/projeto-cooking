@@ -5,6 +5,8 @@ import {
   SafeAreaView,
   ScrollView,
   Image,
+  FlatList,
+  Item
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import serverApi from "../services/api";
@@ -44,15 +46,19 @@ const Home = () => {
 
   return (
     <SafeAreaView style={estilos.container}>
-      <ScrollView>
-        {receitas.map(({ titulo, id, imagem }) => (
+      <FlatList
+       renderItem={({receitas}) => <Item title={receitas.ingredientes} />}
+       keyExtractor={receitas => receitas.id}
+      >
+        {receitas.map(({ titulo, id, ingredientes }) => (
           <View style={estilos.corpo}>
-            <Text style={estilos.titulo1}>{titulo}</Text>
-            <View></View>
+            <Text style={estilos.titulo1}>{ingredientes}</Text>
           </View>
+          
         ))}
-      </ScrollView>
+      </FlatList>
     </SafeAreaView>
+    
   );
 };
 
