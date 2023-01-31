@@ -46,9 +46,7 @@ const Home = () => {
 
   return (
     <SafeAreaView style={estilos.container}>
-      <FlatList
-       renderItem={({receitas}) => <Item title={receitas.ingredientes} />}
-       keyExtractor={receitas => receitas.id}
+      <ScrollView
       >
         {receitas.map(({ titulo, id, ingredientes }) => (
           <View style={estilos.corpo}>
@@ -56,7 +54,7 @@ const Home = () => {
           </View>
           
         ))}
-      </FlatList>
+      </ScrollView>
     </SafeAreaView>
     
   );
@@ -65,13 +63,10 @@ const Home = () => {
 export default Home;
 
 const estilos = StyleSheet.create({
-  ingredientes: { flexWrap: "wrap", flexDirection: "column" },
+
   container: {
     flex: 1,
-    padding: 8,
-    margin: 30,
-    width: 370,
-    textAlign: "center",
+   marginBottom:40
   },
   titulo1: {
     color: "black",
