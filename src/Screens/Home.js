@@ -11,8 +11,10 @@ import { useEffect, useState } from "react";
 import serverApi from "../services/api";
 
 const Home = () => {
+  /* Importação das fontes que serão Ultilizadas no projeto, (caso formos ultilizar outros pesos de fontes esses deverão ser carregados como no código abaixo, todas as fonts estão na pasta assets/fonts lá estão todos os pesos que poderemos ultilizar no projeto ) */
   const [fonteCarregada] = useFonts({
     manrope: require("../../assets/fonts/Manrope-Regular.ttf"),
+    merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
   });
 
   const [receitas, setReceitas] = useState([]);
@@ -46,7 +48,7 @@ const Home = () => {
     }
     getReceitas();
   }, []);
-
+  /* Aqui temos a condicional de fonte carregada, a mesma só pode ser chamada após os Hooks que foram ultilizados(useState e useEffect) caso contrário ela trará bugs */
   if (!fonteCarregada) return <Text>Fonte sendo carregada</Text>;
 
   return (
@@ -78,7 +80,7 @@ const estilos = StyleSheet.create({
     color: "black",
     textAlign: "center",
     fontWeight: "bold",
-    fontFamily: "manrope",
+    fontFamily: "merienda",
     fontSize: 16,
     padding: 8,
   },
