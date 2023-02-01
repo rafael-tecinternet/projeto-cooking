@@ -21,12 +21,12 @@ const Buscar = ({ navigation }) => {
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.viewForm}>
-        <Ionicons name="search" size={22} color="black" />
+        <Ionicons name="search" size={20} color="#000" />
         <TextInput
           placeholder="Busque por uma receita"
-          style={estilos.campo}
+          style={estilos.searchInput}
           onChangeText={receitaDigitada}
-        />
+        ></TextInput>
         <Button title="Buscar" color={"orange"} onPress={buscarReceita} />
       </View>
     </SafeAreaView>
@@ -37,20 +37,27 @@ export default Buscar;
 
 const estilos = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 0,
-    alignItems: "center",
-    justifyContent: "top",
+    padding: 10,
+    justifyContent: "space-between",
   },
   viewForm: {
     flexDirection: "row",
-    justifyContent: "space-around",
     alignItems: "center",
+    backgroundColor: "#ddd",
+    borderRadius: 0,
+    paddingHorizontal: 10,
+    marginVertical: 0,
+    position: "absolute",
+    top: -40,
+    padding: 5,
+    position: "relative",
   },
-  campo: {
-    borderWidth: 1,
+  searchInput: {
+    flex: 1,
+    fontSize: 14,
+    paddingVertical: 0,
     padding: 10,
-    flex: 0.9,
+    flex: 1,
   },
   botao: {
     padding: 10,
