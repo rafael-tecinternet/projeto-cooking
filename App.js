@@ -16,11 +16,11 @@ const App = () => {
         <Tab.Navigator
           backBehavior="history"
           screenOptions={{
-            tabBarActiveTintColor: "orange",
-            tabBarInactiveTintColor: "white",
+            tabBarActiveTintColor: "#CCCA52",
+            tabBarInactiveTintColor: "#FCF6EE",
             tabBarStyle: {
               position: "absolute",
-              backgroundColor: "#666666",
+              backgroundColor: "#E55820",
             },
           }}
         >

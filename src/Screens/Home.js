@@ -7,11 +7,12 @@ import {
   Image,
   FlatList,
   Item,
-  ImageBackground
+  ImageBackground,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import serverApi from "../services/api";
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 const Home = () => {
   const [receitas, setReceitas] = useState([]);
 
@@ -36,8 +37,9 @@ const Home = () => {
         }
 
         setReceitas(listaDeReceitas);
-        console.log(receitas);
-        console.log(listaDeReceitas);
+        // console.log(receitas);
+        // console.log(`../../assets/images/${listaDeReceitas.imagem}`);
+        // console.log(listaDeReceitas);
       } catch (error) {
         console.log("Deu ruim! " + error.message);
       }
@@ -47,32 +49,49 @@ const Home = () => {
 
   return (
     <SafeAreaView style={estilos.container}>
-      <ScrollView
-      >
-        {receitas.map(({ imagem, id, ingredientes }) => (
-          <View style={estilos.corpo}>
-            <Text style={estilos.titulo1}>{ingredientes}</Text>
-            <ImageBackground
-            key={id}
-              source={{uri: `assets:/images/`}}
-             style={{width: 200, height: 200}}
-            ></ImageBackground>
+      {/* <FlatList
+        data={receitas}
+        renderItem={({ item }) => (
+          <View>
+            <Text>{item.modoDePreparo}</Text>
           </View>
-          
+        )}
+      /> */}
+      <ScrollView>
+        {receitas.map(({ imagem, id, tempoDePreparo, rendimento, titulo }) => (
+          <View style={estilos.corpo} key={id}>
+            <Text style={estilos.titulo1}>{titulo}</Text>
+
+            <Image
+              source={{ uri: `http://10.20.45.48/servidor-imagens/${imagem}` }}
+              style={estilos.imagem}
+            />
+            <Text style={estilos.icones}>
+              <Ionicons name="restaurant-outline" size={20} color="black" />
+              {rendimento}
+              <MaterialCommunityIcons
+                name="timer-settings-outline"
+                size={20}
+                color="black"
+              />
+              {tempoDePreparo}
+            </Text>
+          </View>
         ))}
       </ScrollView>
     </SafeAreaView>
-    
   );
 };
 
 export default Home;
 
 const estilos = StyleSheet.create({
-
   container: {
     flex: 1,
-   marginBottom:40
+    marginBottom: 40,
+    backgroundColor: "#FCF6EE",
+    alignItems: "center",
+    paddingBottom: 40,
   },
   titulo1: {
     color: "black",
@@ -80,5 +99,21 @@ const estilos = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 16,
     padding: 8,
+  },
+  corpo: {
+    padding: 8,
+    justifyContent: "space-between",
+    marginVertical: 8,
+    alignItems: "center",
+    width: 350,
+    height: 250,
+  },
+  icones: {
+    padding: 8,
+  },
+  imagem: {
+    width: 350,
+    height: 180,
+    borderRadius: 16,
   },
 });
