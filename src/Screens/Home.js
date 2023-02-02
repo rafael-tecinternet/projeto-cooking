@@ -13,7 +13,14 @@ import React, { useEffect, useState } from "react";
 import serverApi from "../services/api";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import { useFonts } from "expo-font";
+
 const Home = () => {
+  const [fonteCarregada] = useFonts({
+    merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
+    manrope: require("../../assets/fonts/Manrope-Light.ttf"),
+  });
+
   const [receitas, setReceitas] = useState([]);
 
   useEffect(() => {
@@ -35,18 +42,14 @@ const Home = () => {
           };
           listaDeReceitas.push(objetoReceita);
         }
-
         setReceitas(listaDeReceitas);
-        // console.log(receitas);
-        // console.log(`../../assets/images/${listaDeReceitas.imagem}`);
-        // console.log(listaDeReceitas);
       } catch (error) {
         console.log("Deu ruim! " + error.message);
       }
     }
     getReceitas();
   }, []);
-
+  if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
   return (
     <SafeAreaView style={estilos.container}>
       {/* <FlatList
@@ -57,27 +60,33 @@ const Home = () => {
           </View>
         )}
       /> */}
-      <ScrollView>
-        {receitas.map(({ imagem, id, tempoDePreparo, rendimento, titulo }) => (
-          <View style={estilos.corpo} key={id}>
-            <Text style={estilos.titulo1}>{titulo}</Text>
+      <ScrollView style={estilos.view}>
+        {receitas.map(
+          ({ imagem, id, tempoDePreparo, rendimento, titulo, categoria }) => (
+            <View style={estilos.corpo} key={id}>
+              <Text style={estilos.titulo1}>{titulo}</Text>
 
-            <Image
-              source={{ uri: `http://10.20.45.48/servidor-imagens/${imagem}` }}
-              style={estilos.imagem}
-            />
-            <Text style={estilos.icones}>
-              <Ionicons name="restaurant-outline" size={20} color="black" />
-              {rendimento}
-              <MaterialCommunityIcons
-                name="timer-settings-outline"
-                size={20}
-                color="black"
+              <Image
+                source={{
+                  uri: `http://10.20.45.48/servidor-imagens/${imagem}`,
+                }}
+                style={estilos.imagem}
               />
-              {tempoDePreparo}
-            </Text>
-          </View>
-        ))}
+              <Text style={estilos.categoria}> {categoria}</Text>
+              <Text style={estilos.icones}>
+                <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
+                {rendimento}
+                {"   "}
+                <MaterialCommunityIcons
+                  name="timer-settings-outline"
+                  size={16}
+                  color="black"
+                />{" "}
+                {tempoDePreparo}
+              </Text>
+            </View>
+          )
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -88,32 +97,35 @@ export default Home;
 const estilos = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom: 40,
     backgroundColor: "#FCF6EE",
-    alignItems: "center",
-    paddingBottom: 40,
   },
   titulo1: {
     color: "black",
+    fontSize: 20,
+    padding: 16,
+    fontFamily: "merienda",
+    textTransform: "capitalize",
     textAlign: "center",
-    fontWeight: "bold",
-    fontSize: 16,
-    padding: 8,
   },
   corpo: {
-    padding: 8,
-    justifyContent: "space-between",
-    marginVertical: 8,
+    marginVertical: 30,
+    width: "100%",
+    height: 340,
     alignItems: "center",
-    width: 350,
-    height: 250,
   },
   icones: {
-    padding: 8,
+    fontFamily: "manrope",
+    fontSize: 16,
   },
   imagem: {
     width: 350,
-    height: 180,
+    height: 190,
     borderRadius: 16,
+  },
+  categoria: {
+    textTransform: "capitalize",
+    padding: 8,
+    fontFamily: "merienda",
+    fontSize: 18,
   },
 });
