@@ -8,14 +8,16 @@ import {
   FlatList,
   Item,
   ImageBackground,
+  Pressable,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import serverApi from "../services/api";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
+import Detalhes from "./Detalhes";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [fonteCarregada] = useFonts({
     merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
@@ -50,6 +52,7 @@ const Home = () => {
     getReceitas();
   }, []);
   if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
+
   return (
     <SafeAreaView style={estilos.container}>
       {/* <FlatList
@@ -65,25 +68,32 @@ const Home = () => {
           ({ imagem, id, tempoDePreparo, rendimento, titulo, categoria }) => (
             <View style={estilos.corpo} key={id}>
               <Text style={estilos.titulo1}>{titulo}</Text>
-
-              <Image
-                source={{
-                  uri: `http://10.20.45.48/servidor-imagens/${imagem}`,
+              <Pressable
+                onPress={() => {
+                  navigation.navigate("Detalhes");
                 }}
-                style={estilos.imagem}
-              />
-              <Text style={estilos.categoria}> {categoria}</Text>
-              <Text style={estilos.icones}>
-                <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
-                {rendimento}
-                {"   "}
-                <MaterialCommunityIcons
-                  name="timer-settings-outline"
-                  size={16}
-                  color="black"
-                />{" "}
-                {tempoDePreparo}
-              </Text>
+              >
+                <Image
+                  source={{
+                    uri: `http://10.20.45.48/servidor-imagens/${imagem}`,
+                  }}
+                  style={estilos.imagem}
+                />
+              </Pressable>
+
+              <View style={estilos.viewCategoria}>
+                <Text style={estilos.categoria}>{categoria}</Text>
+                <Text style={estilos.icones}>
+                  <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
+                  {rendimento}{" "}
+                  <MaterialCommunityIcons
+                    name="timer-settings-outline"
+                    size={16}
+                    color="black"
+                  />{" "}
+                  {tempoDePreparo}
+                </Text>
+              </View>
             </View>
           )
         )}
@@ -98,24 +108,26 @@ const estilos = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FCF6EE",
+    paddingBottom: 20,
   },
   titulo1: {
     color: "black",
-    fontSize: 20,
+    fontSize: 18.5,
     padding: 16,
     fontFamily: "merienda",
     textTransform: "capitalize",
     textAlign: "center",
   },
   corpo: {
-    marginVertical: 30,
+    marginVertical: 0,
     width: "100%",
     height: 340,
     alignItems: "center",
   },
   icones: {
     fontFamily: "manrope",
-    fontSize: 16,
+    fontSize: 12,
+    paddingTop: 6,
   },
   imagem: {
     width: 350,
@@ -126,6 +138,12 @@ const estilos = StyleSheet.create({
     textTransform: "capitalize",
     padding: 8,
     fontFamily: "merienda",
-    fontSize: 18,
+    fontSize: 16,
+  },
+  viewCategoria: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    width: 350,
   },
 });
