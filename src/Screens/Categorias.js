@@ -13,7 +13,13 @@ const Categorias = () => {
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.categoriaSuperior}>
-        <Pressable style={estilos.cardCategoria}>Salgados</Pressable>
+        <Pressable
+          style={estilos.cardCategoria}
+          onPress={() => navigation.navigate("Salgados")}
+        >
+          Salgados
+        </Pressable>
+
         <Pressable style={estilos.cardCategoria}>vegano</Pressable>
       </View>
       <View style={estilos.categoriaMeio}>
