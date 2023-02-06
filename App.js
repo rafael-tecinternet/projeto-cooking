@@ -2,13 +2,17 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./src/screens/Home";
 import Buscar from "./src/screens/Buscar";
 import Categorias from "./src/screens/Categorias";
 import Favoritos from "./src/screens/Favoritos";
+import Detalhes from "./src/screens/Detalhes";
 
 const App = () => {
   const Tab = createBottomTabNavigator();
+
+  // const Stack = createNativeStackNavigator();
   return (
     <>
       <StatusBar />
@@ -51,6 +55,11 @@ const App = () => {
               },
             }}
           />
+        <Tab.Screen
+            name="Detalhes"
+            component={Detalhes}
+          />
+
           <Tab.Screen
             name="Favoritos"
             component={Favoritos}

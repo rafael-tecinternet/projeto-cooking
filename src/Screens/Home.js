@@ -8,6 +8,8 @@ import {
   FlatList,
   Item,
   ImageBackground,
+  Pressable,
+  Button,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import serverApi from "../services/api";
@@ -15,7 +17,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
 
-const Home = () => {
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator()
+
+const Home = ({navigation}) => {
   const [fonteCarregada] = useFonts({
     merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
@@ -51,6 +57,8 @@ const Home = () => {
   }, []);
   if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
   return (
+    
+
     <SafeAreaView style={estilos.container}>
       {/* <FlatList
         data={receitas}
@@ -60,18 +68,43 @@ const Home = () => {
           </View>
         )}
       /> */}
+      
+
       <ScrollView style={estilos.view}>
+
+      
+      <View style={estilos.botaoBusca}>
+        <Button color={"red"} title="Escolha seus ingredientes" onPress={() => {
+        navigation.navigate("Buscar")
+      }}></Button></View>
+      
+
+      
+
+     
+
         {receitas.map(
           ({ imagem, id, tempoDePreparo, rendimento, titulo, categoria }) => (
             <View style={estilos.corpo} key={id}>
+              
               <Text style={estilos.titulo1}>{titulo}</Text>
-
+              
+              
+              
+              <Pressable onPress={() => {
+            navigation.navigate("Detalhes");
+          }}>
               <Image
                 source={{
                   uri: `http://10.20.45.48/servidor-imagens/${imagem}`,
                 }}
                 style={estilos.imagem}
+                
               />
+              </Pressable>
+
+              
+              
               <Text style={estilos.categoria}> {categoria}</Text>
               <Text style={estilos.icones}>
                 <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
@@ -85,10 +118,12 @@ const Home = () => {
                 {tempoDePreparo}
               </Text>
             </View>
+            
           )
         )}
       </ScrollView>
     </SafeAreaView>
+    
   );
 };
 
@@ -98,6 +133,7 @@ const estilos = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FCF6EE",
+    alignItems: "center"
   },
   titulo1: {
     color: "black",
@@ -127,5 +163,10 @@ const estilos = StyleSheet.create({
     padding: 8,
     fontFamily: "merienda",
     fontSize: 18,
-  },
+  }, botaoBusca: {
+   alignItems:"center",
+    width: 350,
+    paddingTop:32,
+
+  }
 });
