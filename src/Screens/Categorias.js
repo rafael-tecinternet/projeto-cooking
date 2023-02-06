@@ -1,12 +1,20 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Pressable } from "react-native";
 import { useFonts } from "expo-font";
+import { useNavigation } from "@react-navigation/native";
+
+// Acessando recursos do React Navigation (sem props!)
+const navigation = useNavigation();
+
+const navegacaoCategorias = () => {
+  navigation.navigate();
+};
 
 const Categorias = () => {
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.categoriaSuperior}>
-        <Text style={estilos.cardCategoria}>Salgados</Text>
-        <Text style={estilos.cardCategoria}>vegano</Text>
+        <Pressable style={estilos.cardCategoria}>Salgados</Pressable>
+        <Pressable style={estilos.cardCategoria}>vegano</Pressable>
       </View>
       <View style={estilos.categoriaMeio}>
         <Text style={estilos.cardCategoria}>Molhos</Text>
