@@ -27,7 +27,7 @@ const Buscar = ({ navigation }) => {
           style={estilos.searchInput}
           onChangeText={receitaDigitada}
         ></TextInput>
-        <Button title="Buscar" color={"orange"} onPress={buscarReceita} />
+        <Button title="Buscar" color={"#bb0b0b"} onPress={buscarReceita} />
       </View>
     </SafeAreaView>
   );
