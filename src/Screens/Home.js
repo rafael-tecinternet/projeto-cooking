@@ -1,87 +1,131 @@
-import { StyleSheet, Text, View, SafeAreaView, TextInput, ImageBackground, Pressable } from 'react-native'
-import React from 'react'
-
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  ScrollView,
+  Image,
+  FlatList,
+  Item,
+  ImageBackground,
+} from "react-native";
+import React, { useEffect, useState } from "react";
+import serverApi from "../services/api";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import { useFonts } from "expo-font";
 
-import ImagemAlternativa from "../../assets/images/fricasseDeFrango.jpg"
-/* A fazer na Página da Home:
-Melhor estilização geral
-fazer a barra de pesquisa funcionar
-fazer com que os blocos de conteudo exibam informações do array do db.json como em ordem:
-ID (não vai exibir porem vai identificar o ID)
-Titulo
-Ingredientes
-Modo de preparo
-Rendimento
-Tempo de preparo
-Categoria
-E por fim, exibir a imagem
-*/
 const Home = () => {
+  const [fonteCarregada] = useFonts({
+    merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
+    manrope: require("../../assets/fonts/Manrope-Light.ttf"),
+  });
+
+  const [receitas, setReceitas] = useState([]);
+
+  useEffect(() => {
+    async function getReceitas() {
+      try {
+        const resposta = await fetch(`${serverApi}/receitas.json`);
+        const dados = await resposta.json();
+        let listaDeReceitas = [];
+        for (const receita in dados) {
+          const objetoReceita = {
+            id: receita,
+            titulo: dados[receita].titulo,
+            ingredientes: dados[receita].ingredientes,
+            modoDePreparo: dados[receita].modoDePreparo,
+            rendimento: dados[receita].rendimento,
+            tempoDePreparo: dados[receita].tempoDePreparo,
+            categoria: dados[receita].categoria,
+            imagem: dados[receita].imagem,
+          };
+          listaDeReceitas.push(objetoReceita);
+        }
+        setReceitas(listaDeReceitas);
+      } catch (error) {
+        console.log("Deu ruim! " + error.message);
+      }
+    }
+    getReceitas();
+  }, []);
+  if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
   return (
     <SafeAreaView style={estilos.container}>
-      <View style={estilos.viewForm}>
-      {/* faz com que o icone de hamburguer (reorder) fique dentro do formulario (não funcionando ainda) */}
-      <Pressable>
-        <Ionicons name="reorder-three" size={30} color="black" />
-        </Pressable>
-        <TextInput 
-        style={estilos.barraDePesquisa}
-        placeholder="Pesquisar ingredientes"/>
-        
-        <View>
-        
-        {/* a fazer: adicionar onpress no pressable e a programação para ir para os detalhes da receita */}
-        <Pressable>
-        <ImageBackground style={estilos.BlocosDeConteudo}
-        source={ImagemAlternativa}>
-        <Text style={estilos.texto}>Fricasse de frango</Text>
-        </ImageBackground>
-        </Pressable>
+      {/* <FlatList
+        data={receitas}
+        renderItem={({ item }) => (
+          <View>
+            <Text>{item.modoDePreparo}</Text>
+          </View>
+        )}
+      /> */}
+      <ScrollView style={estilos.view}>
+        {receitas.map(
+          ({ imagem, id, tempoDePreparo, rendimento, titulo, categoria }) => (
+            <View style={estilos.corpo} key={id}>
+              <Text style={estilos.titulo1}>{titulo}</Text>
 
-
-        <ImageBackground style={estilos.BlocosDeConteudo}
-        source={ImagemAlternativa}>
-        <Text style={estilos.texto}>Fricasse de frango</Text>
-        </ImageBackground>
-        
-        </View>
-      </View>
+              <Image
+                source={{
+                  uri: `http://10.20.45.48/servidor-imagens/${imagem}`,
+                }}
+                style={estilos.imagem}
+              />
+              <Text style={estilos.categoria}> {categoria}</Text>
+              <Text style={estilos.icones}>
+                <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
+                {rendimento}
+                {"   "}
+                <MaterialCommunityIcons
+                  name="timer-settings-outline"
+                  size={16}
+                  color="black"
+                />{" "}
+                {tempoDePreparo}
+              </Text>
+            </View>
+          )
+        )}
+      </ScrollView>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 export default Home;
 
 const estilos = StyleSheet.create({
   container: {
-    backgroundColor: "white",
     flex: 1,
+    backgroundColor: "#FCF6EE",
+  },
+  titulo1: {
+    color: "black",
+    fontSize: 20,
+    padding: 16,
+    fontFamily: "merienda",
+    textTransform: "capitalize",
+    textAlign: "center",
+  },
+  corpo: {
+    marginVertical: 30,
+    width: "100%",
+    height: 340,
     alignItems: "center",
-  }, barraDePesquisa: {
-    backgroundColor: "gray",
-    borderRadius: 5,
+  },
+  icones: {
+    fontFamily: "manrope",
+    fontSize: 16,
+  },
+  imagem: {
+    width: 350,
+    height: 190,
+    borderRadius: 16,
+  },
+  categoria: {
+    textTransform: "capitalize",
+    padding: 8,
+    fontFamily: "merienda",
     fontSize: 18,
-    marginTop: 30,
-    marginBottom: 40,
-    paddingHorizontal: 65, // extende a barra de pesquisa para os lados (horizontal)
-    paddingVertical: 5,
-  }, BlocosDeConteudo: {
-    // Aqui ele irá afetar os blocos de conteudo
-    marginVertical: 15,
-    backgroundColor: "gray",
-    borderRadius: 5, // arredonda a borda
-    width: "100%", // extende em 100% o bloco de conteudo
-    height: 150,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: 15, // move o texto um pouco mais pra baixo
-    paddingBottom: 80, 
-    borderWidth: 3, // aumenta a grossura da borda
-    overflow: "hidden", // faz com que a imagem não passe da borda
-  }, texto: {
-    color: "red",
-    textAlign: 'center',
-    fontSize: 18
-  }
-})
+  },
+});
