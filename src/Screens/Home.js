@@ -119,7 +119,7 @@ const estilos = StyleSheet.create({
     textAlign: "center",
   },
   corpo: {
-    marginVertical: 0,
+    marginBottom: 2,
     width: "100%",
     height: 340,
     alignItems: "center",
