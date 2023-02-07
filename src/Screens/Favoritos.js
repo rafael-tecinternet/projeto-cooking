@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useNavigation } from "@react-navigation/core";
+import { useNavigation, navigation } from "@react-navigation/core";
 import { useEffect, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -32,7 +32,7 @@ const verDetalhes = (receitaSelecionada) => {
   navigation.navigate("Detalhes", { receita: receitaSelecionada });
 };
 
-const excluirFavoritos = async () => {
+async function excluirFavoritos() {
   Alert.alert(
     "Excluir TODOS?",
     "Tem certeza que deseja excluir TODAS as suas receitas?",
@@ -54,7 +54,7 @@ const excluirFavoritos = async () => {
       },
     ]
   );
-};
+}
 
 const excluirUmFavorito = async (indice) => {
   listaFavoritos.splice(indice, 1);
