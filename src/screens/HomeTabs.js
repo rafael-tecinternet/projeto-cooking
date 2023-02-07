@@ -33,6 +33,7 @@ const HomeTabs = () => {
         name="Buscar"
         component={Buscar}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => {
             return <Ionicons name="search" size={size} color={color} />;
           },

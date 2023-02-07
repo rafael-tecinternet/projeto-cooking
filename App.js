@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet, StatusBar } from "react-native";
 import HomeTabs from "./src/screens/HomeTabs";
 import Detalhes from "./src/screens/Detalhes";
-
+import Resultados from "./src/screens/Resultados";
 const App = () => {
   const Stack = createNativeStackNavigator();
   return (
@@ -17,6 +17,7 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen name="Detalhes" component={Detalhes} />
+          <Stack.Screen name="Resultados" component={Resultados} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
