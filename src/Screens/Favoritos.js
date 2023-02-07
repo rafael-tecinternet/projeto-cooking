@@ -69,7 +69,10 @@ const excluirUmFavorito = async (indice) => {
     <SafeAreaView style={estilos.safeContainer}>
       <View style={estilos.container}>
         <View style={estilos.cabecalho}>
-          <Text> Quantidade: {listaFavoritos.length}</Text>
+          <Text>
+            {" "}
+            Quantidade de receitas favotitas: {listaFavoritos.length}
+          </Text>
           <Pressable
             style={estilos.botaoExcluirTudo}
             onPress={excluirFavoritos}
@@ -93,7 +96,6 @@ const excluirUmFavorito = async (indice) => {
                   style={estilos.botaoExcluir}
                   onPress={excluirUmFavorito.bind(this, indice)}
                 >
-                  {" "}
                   <Ionicons name="trash" size={18} color="white" />
                 </Pressable>
               </Pressable>
