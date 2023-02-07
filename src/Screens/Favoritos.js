@@ -1,9 +1,16 @@
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useNavigation, navigation } from "@react-navigation/core";
+import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Alert,
+  SafeAreaView,
+} from "react-native";
 
 const Favoritos = () => {
   const [listaFavoritos, setListaFavoritos] = useState([]);
@@ -32,7 +39,7 @@ const verDetalhes = (receitaSelecionada) => {
   navigation.navigate("Detalhes", { receita: receitaSelecionada });
 };
 
-async function excluirFavoritos() {
+const excluirFavoritos = async () => {
   Alert.alert(
     "Excluir TODOS?",
     "Tem certeza que deseja excluir TODAS as suas receitas?",
@@ -54,7 +61,7 @@ async function excluirFavoritos() {
       },
     ]
   );
-}
+};
 
 const excluirUmFavorito = async (indice) => {
   listaFavoritos.splice(indice, 1);
@@ -69,10 +76,7 @@ const excluirUmFavorito = async (indice) => {
     <SafeAreaView style={estilos.safeContainer}>
       <View style={estilos.container}>
         <View style={estilos.cabecalho}>
-          <Text>
-            {" "}
-            Quantidade de receitas favotitas: {listaFavoritos.length}
-          </Text>
+          <Text>Quantidade de receitas favotitas: {listaFavoritos.length}</Text>
           <Pressable
             style={estilos.botaoExcluirTudo}
             onPress={excluirFavoritos}
