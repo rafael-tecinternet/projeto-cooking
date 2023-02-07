@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import React, { useEffect, useState } from "react";
 
 import { Ionicons } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
+import serverApi from "../services/api";
 
 const Detalhes = ({ navigation }) => {
 
@@ -14,8 +14,41 @@ const Detalhes = ({ navigation }) => {
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
   });
 
+  const [receitas, setReceitas] = useState([]);
+
+  useEffect(() => {
+    async function getReceitas() {
+      try {
+        const resposta = await fetch(`${serverApi}/receitas.json`);
+        const dados = await resposta.json();
+        let listaDeReceitas = [];
+        for (const receita in dados) {
+          const objetoReceita = {
+            id: receita,
+            titulo: dados[receita].titulo,
+            ingredientes: dados[receita].ingredientes,
+            modoDePreparo: dados[receita].modoDePreparo,
+            rendimento: dados[receita].rendimento,
+            tempoDePreparo: dados[receita].tempoDePreparo,
+            categoria: dados[receita].categoria,
+            imagem: dados[receita].imagem,
+          };
+          listaDeReceitas.push(objetoReceita);
+        }
+        setReceitas(listaDeReceitas);
+      } catch (error) {
+        console.log("Deu ruim! " + error.message);
+      }
+    }
+    getReceitas();
+  }, []);
+  if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
+
   return (
     <SafeAreaView style={estilos.container}>
+      <ScrollView style={estilos.view}>
+
+
       <View style={estilos.viewImagem}>
 
       <Text>Teste</Text>
@@ -31,6 +64,10 @@ const Detalhes = ({ navigation }) => {
       color="black"
       />{" "}Minutos
       <Ionicons name="restaurant-outline" size={16} color="black" />{" "}Porções
+      <Ionicons name="bookmark-outline" size={24} color="black" />
+      Salvar receita
+      
+      
     
     </Text>
 
@@ -42,7 +79,55 @@ const Detalhes = ({ navigation }) => {
     <Text style={estilos.textoMenor}>
       1 Lata de creme de leite
     </Text>
+    
+    <Text style={estilos.textoMenor}>
+      1 Lata de milho verde
+    </Text>
+    <Text style={estilos.textoMenor}>
+      1 copo de requeijão cremoso
+    </Text>
+    <Text style={estilos.textoMenor}>
+      1 copo de requeijão cremoso
+    </Text>
+
+    <Text style={estilos.textoMenor}>
+      1 copo de requeijão cremoso
+    </Text>
+
+    <Text style={estilos.textoMenor}>
+      1 copo de requeijão cremoso
+    </Text>
+    <Text style={estilos.textoMenor}>
+      1 copo de requeijão cremoso
+    </Text>
+    <Text style={estilos.textoMenor}>
+      1 copo de requeijão cremoso
+    </Text>
+
+    <Text style={estilos.textoMaior}>Modo de preparo</Text>
+    
+    <Text style={estilos.textoMenor}>
+      fjdsfbjhsbdfgbbdsfhbghbjdfbsgjbjhsdbfghbbdsfhhgbdsfgjbdsfbjgbsjdbjgfbdsjbjhsfgbdhbgjsfdbgsfdbkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkktttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+    </Text>
+
+    <Text style={estilos.textoMenor}>
+      fjdsfbjhsbdfgbbdsfhbghbjdfbsgjbjhsdbfghbbdsfhhgbdsfgjbdsfbjgbsjdbjgfbdsjbjhsfgbdhbgjsfdbgsfdbkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkktttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+    </Text>
+
+    <Text style={estilos.textoMenor}>
+    <Ionicons name="bookmark-outline" size={24} color="black" />
+      Salvar receita
+    </Text>
     </View>
+
+    <Text style={estilos.icones}>
+    <Ionicons name="bookmark-outline" size={24} color="black" />
+      Salvar receita
+      
+    
+    </Text>
+
+    </ScrollView>
     </SafeAreaView>
   )
 }
@@ -55,37 +140,46 @@ container: {
   backgroundColor: "#FCF6EE",
   alignItems: "center"
 },
+
 viewImagem: {
-backgroundColor: "red",
-width: 400,
-height: 200
+  backgroundColor: "red",
+  width: 400,
+  height: 200
 
 },
 ViewTexto: {
-backgroundColor: "red",
-marginTop: 30,
-marginBottom: 8,
-paddingRight: 100,
-paddingBottom: 30,
+  backgroundColor: "red",
+  marginBottom: 8,
+  paddingRight: 100,
+  paddingBottom: 30,
+  
 },
 textoMenor: {
-textAlign: "left"
+  textAlign: "left",
+  fontFamily: "manrope",
+  fontSize: 16,
+  marginLeft: 75,
+  
 },
 tituloReceita: {
   textTransform: "capitalize",
   padding: 8,
   fontFamily: "merienda",
-  fontSize: 18,
+  fontSize: 22,
+  textAlign: "center"
 },
 textoMaior: {
   textTransform: "capitalize",
-    
-    fontFamily: "merienda",
-    fontSize: 16,
-    
+  textAlign: "left",
+  fontFamily: "merienda",
+  fontSize: 16,
+  marginLeft: 75,
+  marginTop: 15   
 }, icones: {
   fontFamily: "manrope",
   fontSize: 16,
-}
+  textAlign: "center"
+},
+
 
 })
