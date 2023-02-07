@@ -1,5 +1,4 @@
 import { Alert, Button, StyleSheet, Text, View, TextInput } from "react-native";
-import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -9,8 +8,6 @@ const Buscar = () => {
   const receitaDigitada = (valorDigitado) => {
     setReceita(valorDigitado);
   };
-
-  const [receita, setReceita] = useState("");
 
   const buscarReceita = () => {
     if (!receita) {
