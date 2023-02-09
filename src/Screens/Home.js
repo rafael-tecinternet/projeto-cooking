@@ -69,7 +69,7 @@ const Home = ({navigation}) => {
         )}
       /> */}
       
-      
+
       <ScrollView style={estilos.view}>
 
       
@@ -92,10 +92,9 @@ const Home = ({navigation}) => {
               
               
               <Pressable onPress={() => {
-            props.navigation.navigate("Detalhes", {titulo});
+            navigation.navigate("Detalhes");
           }}>
               <Image
-                
                 source={{
                   uri: `http://10.20.45.48/servidor-imagens/${imagem}`,
                 }}

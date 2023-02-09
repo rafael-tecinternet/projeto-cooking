@@ -8,9 +8,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 
 
-const Detalhes = ({ route }) => {
+const Detalhes = ({ }) => {
 
-  const { receita } = route.params;
+  
 
   const [fonteCarregada] = useFonts({
     merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
@@ -25,7 +25,7 @@ const Detalhes = ({ route }) => {
       </View>
 
 
-    <Text style={estilos.tituloReceita}>{receita.titulo}</Text>
+    <Text style={estilos.tituloReceita}></Text>
     {/* Icones de minutos e porções */}
     <Text style={estilos.icones}>
       <MaterialCommunityIcons
