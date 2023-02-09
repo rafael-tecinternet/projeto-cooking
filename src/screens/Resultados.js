@@ -11,7 +11,7 @@ const Resultados = ({ route }) => {
   useEffect(() => {
     async function buscarReceita() {
       try {
-        const resposta = await api.get(`/receitas?${titulo}`);
+        const resposta = await api.get(`/receitas.json`);
         setResultados(resposta);
         setInterval(() => {
           setLoading(false);
