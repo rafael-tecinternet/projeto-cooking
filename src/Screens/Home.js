@@ -19,6 +19,7 @@ import { useFonts } from "expo-font";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+
 const Stack = createNativeStackNavigator()
 
 const Home = ({navigation}) => {
@@ -60,6 +61,7 @@ const Home = ({navigation}) => {
     
 
     <SafeAreaView style={estilos.container}>
+      
       {/* <FlatList
         data={receitas}
         renderItem={({ item }) => (
@@ -92,7 +94,7 @@ const Home = ({navigation}) => {
               
               
               <Pressable onPress={() => {
-            navigation.navigate("Detalhes");
+            navigation.navigate("Detalhes", {objetoReceita});
           }}>
               <Image
                 source={{
