@@ -7,42 +7,17 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import serverApi from "../services/api";
 
-const Detalhes = ({ navigation }) => {
+
+const Detalhes = ({ route }) => {
+
+  const { receita } = route.params;
 
   const [fonteCarregada] = useFonts({
     merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
   });
 
-  const [receitas, setReceitas] = useState([]);
-
-  useEffect(() => {
-    async function getReceitas() {
-      try {
-        const resposta = await fetch(`${serverApi}/receitas.json`);
-        const dados = await resposta.json();
-        let listaDeReceitas = [];
-        for (const receita in dados) {
-          const objetoReceita = {
-            id: receita,
-            titulo: dados[receita].titulo,
-            ingredientes: dados[receita].ingredientes,
-            modoDePreparo: dados[receita].modoDePreparo,
-            rendimento: dados[receita].rendimento,
-            tempoDePreparo: dados[receita].tempoDePreparo,
-            categoria: dados[receita].categoria,
-            imagem: dados[receita].imagem,
-          };
-          listaDeReceitas.push(objetoReceita);
-        }
-        setReceitas(listaDeReceitas);
-      } catch (error) {
-        console.log("Deu ruim! " + error.message);
-      }
-    }
-    getReceitas();
-  }, []);
-  if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
+  
 
   return (
     <SafeAreaView style={estilos.container}>
@@ -55,7 +30,7 @@ const Detalhes = ({ navigation }) => {
       </View>
 
 
-    <Text style={estilos.tituloReceita}>Titulo da receita</Text>
+    <Text style={estilos.tituloReceita}>{receita.titulo}</Text>
     {/* Icones de minutos e porções */}
     <Text style={estilos.icones}>
       <MaterialCommunityIcons
