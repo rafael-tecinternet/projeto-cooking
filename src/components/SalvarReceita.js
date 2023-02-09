@@ -2,13 +2,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/core";
 import { Vibration } from "react-native";
 
-const Receita = ({ receita }) => {
+const SalvarReceita = ({ receita }) => {
   const navigation = useNavigation();
   const leiaMais = () => {
     navigation.navigate("Detalhes", { receita });
   };
 
-  const { title, poster_path } = receita;
+  const { title } = receita;
   const salvar = async () => {
     const receitaFavorita = await AsyncStorage.getItem("@favoritos");
 
@@ -57,7 +57,7 @@ const Receita = ({ receita }) => {
   );
 };
 
-export default Receita;
+export default SalvarReceita;
 
 const estilos = StyleSheet.create({
   card: {
