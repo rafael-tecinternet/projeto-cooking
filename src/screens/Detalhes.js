@@ -8,7 +8,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 
 
-const Detalhes = ({ }) => {
+const Detalhes = ({ route }) => {
 
   
 
@@ -26,7 +26,7 @@ const Detalhes = ({ }) => {
       </View>
 
 
-    <Text style={estilos.tituloReceita}></Text>
+    <Text style={estilos.tituloReceita}>Titulo da receita</Text>
     {/* Icones de minutos e porções */}
     <Text style={estilos.icones}>
       <MaterialCommunityIcons
