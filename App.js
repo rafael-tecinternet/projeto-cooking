@@ -7,6 +7,14 @@ import Buscar from "./src/screens/Buscar";
 import Categorias from "./src/screens/Categorias";
 import Favoritos from "./src/screens/Favoritos";
 
+// Para a navegação funcionar precisamos importar todas as funções que foram criadas no arquivo StackNavigation
+import {
+  NavegacaoHome,
+  NavegacaoBusca,
+  NavegacaoFavoritos,
+  NavegacaoCategorias,
+} from "./StackNavigation";
+
 const App = () => {
   const Tab = createBottomTabNavigator();
   return (
@@ -24,9 +32,10 @@ const App = () => {
             },
           }}
         >
+          {/* Abaixo todas as Screens serão passadas como parâmetro para o "componet" e serão carregadas como as Funções que já atribuimos  */}
           <Tab.Screen
             name="Home"
-            component={Home}
+            component={NavegacaoHome}
             options={{
               headerShown: false,
               tabBarIcon: ({ color, size }) => {
@@ -36,7 +45,7 @@ const App = () => {
           />
           <Tab.Screen
             name="Buscar"
-            component={Buscar}
+            component={NavegacaoBusca}
             options={{
               tabBarIcon: ({ color, size }) => {
                 return <Ionicons name="search" size={size} color={color} />;
@@ -45,8 +54,9 @@ const App = () => {
           />
           <Tab.Screen
             name="Categorias"
-            component={Categorias}
+            component={NavegacaoCategorias}
             options={{
+              headerShown: false,
               tabBarIcon: ({ color, size, focused }) => {
                 return <Ionicons name="book" size={size} color={color} />;
               },
@@ -54,7 +64,7 @@ const App = () => {
           />
           <Tab.Screen
             name="Favoritos"
-            component={Favoritos}
+            component={NavegacaoFavoritos}
             options={{
               tabBarIcon: ({ color, size, focused }) => {
                 return <Ionicons name="star" size={size} color={color} />;

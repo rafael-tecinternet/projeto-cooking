@@ -9,13 +9,13 @@ import { useNavigation } from "@react-navigation/native";
 //   navigation.navigate();
 // };
 
-const Categorias = () => {
+const Categorias = ({ navigation }) => {
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.categoriaSuperior}>
         <Pressable
           style={estilos.cardCategoria}
-          onPress={() => navigation.navigate("Salgados")}
+          onPress={() => navigation.navigate("TelaCategoriaStack", {})}
         >
           <Text>Salgados</Text>
         </Pressable>
