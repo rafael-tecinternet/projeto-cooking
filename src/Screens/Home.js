@@ -110,6 +110,7 @@ const estilos = StyleSheet.create({
     paddingBottom: 20,
   },
   titulo1: {
+    width: 380,
     color: "black",
     fontSize: 18.5,
     padding: 16,
