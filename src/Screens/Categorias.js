@@ -3,11 +3,11 @@ import { useFonts } from "expo-font";
 import { useNavigation } from "@react-navigation/native";
 
 // Acessando recursos do React Navigation (sem props!)
-const navigation = useNavigation();
+//const navigation = useNavigation();
 
-const navegacaoCategorias = () => {
-  navigation.navigate();
-};
+// const navegacaoCategorias = () => {
+//   navigation.navigate();
+// };
 
 const Categorias = () => {
   return (
@@ -17,10 +17,12 @@ const Categorias = () => {
           style={estilos.cardCategoria}
           onPress={() => navigation.navigate("Salgados")}
         >
-          Salgados
+          <Text>Salgados</Text>
         </Pressable>
 
-        <Pressable style={estilos.cardCategoria}>vegano</Pressable>
+        <Pressable style={estilos.cardCategoria}>
+          <Text>vegano</Text>
+        </Pressable>
       </View>
       <View style={estilos.categoriaMeio}>
         <Text style={estilos.cardCategoria}>Molhos</Text>
