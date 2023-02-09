@@ -48,6 +48,11 @@ const Home = ({ navigation }) => {
     }
     getReceitas();
   }, []);
+
+  const verDetalhes = (receitaSelecionado) => {
+    navigation.navigate("Detalhes", { receita: receitaSelecionado });
+  };
+
   if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
 
   return (
@@ -61,39 +66,36 @@ const Home = ({ navigation }) => {
         )}
       /> */}
       <ScrollView style={estilos.view}>
-        {receitas.map(
-          ({ imagem, id, tempoDePreparo, rendimento, titulo, categoria }) => (
-            <View style={estilos.corpo} key={id}>
-              <Text style={estilos.titulo1}>{titulo}</Text>
-              <Pressable
-                onPress={() => {
-                  navigation.navigate("Detalhes");
+        {receitas.map((receita) => (
+          <View style={estilos.corpo} key={receita.id}>
+            <Text style={estilos.titulo1}>{receita.titulo}</Text>
+            <Pressable
+              onPress={verDetalhes.bind(this, receita)}
+              key={receita.id}
+            >
+              <Image
+                source={{
+                  uri: `http://10.20.48.26/servidor-imagens/${receita.imagem}`,
                 }}
-              >
-                <Image
-                  source={{
-                    uri: `http://10.20.45.48/servidor-imagens/${imagem}`,
-                  }}
-                  style={estilos.imagem}
-                />
-              </Pressable>
+                style={estilos.imagem}
+              />
+            </Pressable>
 
-              <View style={estilos.viewCategoria}>
-                <Text style={estilos.categoria}>{categoria}</Text>
-                <Text style={estilos.icones}>
-                  <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
-                  {rendimento}{" "}
-                  <MaterialCommunityIcons
-                    name="timer-settings-outline"
-                    size={16}
-                    color="black"
-                  />{" "}
-                  {tempoDePreparo}
-                </Text>
-              </View>
+            <View style={estilos.viewCategoria}>
+              <Text style={estilos.categoria}>{receita.categoria}</Text>
+              <Text style={estilos.icones}>
+                <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
+                {receita.rendimento}{" "}
+                <MaterialCommunityIcons
+                  name="timer-settings-outline"
+                  size={16}
+                  color="black"
+                />{" "}
+                {receita.tempoDePreparo}
+              </Text>
             </View>
-          )
-        )}
+          </View>
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
