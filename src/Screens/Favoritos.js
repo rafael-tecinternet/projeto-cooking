@@ -130,7 +130,7 @@ const estilos = StyleSheet.create({
     alignItems: "center",
   },
   botaoExcluir: {
-    backgroundColor: "#C0392B",
+    backgroundColor: "#C20000",
     padding: 8,
     borderRadius: 4,
   },
@@ -142,7 +142,7 @@ const estilos = StyleSheet.create({
   },
   botaoExcluirTudo: {
     borderWidth: 1,
-    borderColor: "#C0392B",
+    borderColor: "#C20000",
     padding: 8,
     borderRadius: 4,
   },
