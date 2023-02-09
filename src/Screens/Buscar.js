@@ -2,8 +2,10 @@ import { Alert, Button, StyleSheet, Text, View, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 const Buscar = () => {
   const navigation = useNavigation();
+  const [receita, setReceita] = useState('');
 
   const receitaDigitada = (valorDigitado) => {
     setReceita(valorDigitado);

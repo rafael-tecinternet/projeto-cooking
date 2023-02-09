@@ -108,9 +108,9 @@ const estilos = StyleSheet.create({
     paddingBottom: 20,
   },
   titulo1: {
-    color: "black",
+    color: "red",
     fontSize: 18.5,
-    padding: 16,
+    padding: 8,
     fontFamily: "merienda",
     textTransform: "capitalize",
     textAlign: "center",
