@@ -32,9 +32,9 @@ import {
  
    return (
      <SafeAreaView style={estilos.container}>
-       <Text style={estilos.texto}>Scarface? Star wars? blade runner?</Text>
+       <Text style={estilos.texto}>Gostaria de pesquisar uma receita porém não sabe o que escrever?</Text>
        <Text style={estilos.texto}>
-         Localize um filme que você viu ou gostaria de ver!
+         Localize uma receita usando os ingredientes que voce tem!
        </Text>
  
        <View style={estilos.viewForm}>
@@ -50,7 +50,7 @@ import {
          <Button
            style={estilos.botao}
            color="#5451a6"
-           title="Pesquisar filme"
+           title="Pesquisar Ingrediente"
            onPress={buscarIngredientes}
          />
        </View>
