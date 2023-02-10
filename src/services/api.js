@@ -1,3 +1,3 @@
 
-const serverApi = `https://mobile-975e2-default-rtdb.firebaseio.com/`;
+const serverApi = `https://projeto-mobi-57f29-default-rtdb-firebaseio.com/`;
 export default serverApi;
