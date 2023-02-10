@@ -56,7 +56,7 @@ const CardReceita = ({ receita }) => {
     listaDeReceitas.push(receita);
 
     // 5) Finalmente, salvamos COMO STRING no storage do dispositivo
-    await AsyncStorage.setItem("@favoritos", JSON.stringify(listaDeFilmes));
+    await AsyncStorage.setItem("@favoritos", JSON.stringify(listaDeReceitas));
 
     Alert.alert("Favoritos", "Receita salva com sucesso!");
   };
@@ -66,13 +66,7 @@ const CardReceita = ({ receita }) => {
       <Image
         style={estilos.imagem}
         resizeMode="cover"
-        source={
-          poster_path
-            ? {
-                uri: `https://image.tmdb.org/t/p/original/${poster_path}`,
-              }
-            : fotoAlternativa
-        }
+        
       />
       <View style={estilos.corpo}>
         <Text style={estilos.titulo}> {titulo} </Text>
@@ -95,7 +89,7 @@ const CardReceita = ({ receita }) => {
   );
 };
 
-export default CardFilme;
+export default CardReceita;
 
 const estilos = StyleSheet.create({
   card: {

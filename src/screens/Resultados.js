@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Loading from "../components/Loading";
 
 import serverApi from "../services/api";
-import CardFilme from "../components/CardFilme";
+import CardReceita from "../components/CardReceita";
 
 import ItemSeparador from "../components/ItemSeparador";
 import ItemVazio from "../components/ItemVazio";
@@ -44,13 +44,13 @@ const Resultados = ({ route }) => {
         console.log("deu ruim na busca da API " + error.message);
       }
     }
-    buscarFilmes();
+    buscarIngredientes();
   }, []);
   // forma 1
   // if (loading) return <Loading />;
   return (
     <SafeAreaView style={estilos.container}>
-      <Text>Você buscou por: {filme}</Text>
+      <Text>Você buscou por: {receita}</Text>
       {/* forma 2 */}
       {/* caso loading for true, componente Loading será executado (operador evaluate, só pode ser usado no JSX) */}
       {loading && <Loading />}
@@ -62,8 +62,8 @@ const Resultados = ({ route }) => {
             ItemSeparatorComponent={ItemSeparador}
             ListEmptyComponent={ItemVazio}
             data={resultados}
-            renderItem={({ item }) => {
-              return <CardFilme filme={item} />;
+            renderItem={({ titulo }) => {
+              return <CardReceita receita={titulo} />;
             }}
             keyExtractor={(item) => item.id}
           />
