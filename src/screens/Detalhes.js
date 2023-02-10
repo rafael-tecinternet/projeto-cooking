@@ -5,7 +5,6 @@ import {
   Image,
   ScrollView,
   FlatList,
-  SectionList,
 } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -21,17 +20,16 @@ const Detalhes = ({ route }) => {
 
   if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
   return (
-    
     <SafeAreaView style={estilos.container}>
       <ScrollView>
         <Image
           source={{
-            uri: `http://192.168.163.147/servidor-images/${receita.imagem}`,
+            uri: `http://10.20.48.26/servidor-imagens/${receita.imagem}`,
           }}
           style={estilos.imagem}
         />
         <Text style={estilos.titulo}>{receita.titulo}</Text>
-        
+
         <Text style={estilos.icones}>
           <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
           {receita.rendimento}{" "}
@@ -42,59 +40,57 @@ const Detalhes = ({ route }) => {
           />{" "}
           {receita.tempoDePreparo}
         </Text>
-       
+
         <View style={estilos.lista}>
           <Text style={estilos.titulo1}>Ingredientes:</Text>
-            <FlatList
-              data={receita.ingredientes}
-              renderItem={({ item }) => <Text style={estilos.texto}>{item}.</Text>}
-              keyExtractor={(item) => item.id}
-            />
+          <FlatList
+            data={receita.ingredientes}
+            renderItem={({ item }) => (
+              <Text style={estilos.texto}>{item}.</Text>
+            )}
+            keyExtractor={(item) => item.id}
+          />
         </View>
         <View style={estilos.lista}>
           <Text style={estilos.titulo1}>Modo de Preparo:</Text>
-            <FlatList
-              data={receita.modoDePreparo}
-              renderItem={({ item }) => <Text style={estilos.texto}>{item}</Text>
-            }
-              keyExtractor={(item) => item.id}
-            />
+          <FlatList
+            data={receita.modoDePreparo}
+            renderItem={({ item }) => <Text style={estilos.texto}>{item}</Text>}
+            keyExtractor={(item) => item.id}
+          />
         </View>
-        </ScrollView>   
+      </ScrollView>
     </SafeAreaView>
-    
   );
 };
 
 export default Detalhes;
 
 const estilos = StyleSheet.create({
-  container:{flex: 1},
+  container: { flex: 1 },
   imagem: {
     height: 250,
   },
-  titulo:{
+  titulo: {
     fontSize: 18,
     fontFamily: "merienda",
-    padding: 16
+    padding: 16,
   },
-  icones:{
+  icones: {
     paddingStart: 16,
-    fontFamily: "manrope"
+    fontFamily: "manrope",
   },
-  lista:{
-  margin:16,
-  
+  lista: {
+    margin: 16,
   },
-  titulo1:{
+  titulo1: {
     fontSize: 16,
     fontFamily: "merienda",
-    marginVertical: 16
+    marginVertical: 16,
   },
-  texto:{
+  texto: {
     fontFamily: "manrope",
-    fontSize:15,
+    fontSize: 15,
     marginBottom: 16,
-    
-  }
+  },
 });
