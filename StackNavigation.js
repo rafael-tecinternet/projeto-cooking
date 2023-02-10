@@ -6,7 +6,13 @@ import Categorias from "./src/screens/Categorias";
 import Favoritos from "./src/screens/Favoritos";
 import Buscar from "./src/screens/Buscar";
 // Realizamos a importação da TelaCategoria para exibição/navegação entre os componentes filhos da mesma
-import TelaCategoria from "./src/screens/TelaCategoria";
+import TelaCategoria from "./src/screens/Salgados";
+import Salgados from "./src/screens/Salgados";
+import Vegano from "./src/screens/Vegano";
+import Doces from "./src/screens/Doces";
+import Molhos from "./src/screens/Molhos";
+import Carnes from "./src/screens/Carnes";
+import Massas from "./src/screens/Massas";
 
 // Aqui criamos uma função e exportamos para acessa-la em outra página na qual chamaremos nos próximos passos
 // Ultilizamos o Stack Navigator/Stack Screen para a exibição dos resultados que serão entregues quando navegarmos
@@ -34,11 +40,36 @@ export function NavegacaoCategorias() {
   return (
     <Stack.Navigator>
       {/* Todos os names serão como "nomeStack" para não gerar conflitos com a navegação de menu */}
-      <Stack.Screen name="CategoriasStack" component={Categorias} />
+      <Stack.Screen name="Categorias" component={Categorias} />
       <Stack.Screen
-        name="TelaCategoriaStack"
-        component={TelaCategoria}
-        options={{ title: "Tela Categoria" }}
+        name="Salgados"
+        component={Salgados}
+        options={{ title: "Salgados" }}
+      />
+      <Stack.Screen
+        name="Vegano"
+        component={Vegano}
+        options={{ title: "Vegano" }}
+      />
+      <Stack.Screen
+        name="Molhos"
+        component={Molhos}
+        options={{ title: "Molhos" }}
+      />
+      <Stack.Screen
+        name="Carnes"
+        component={Carnes}
+        options={{ title: "Carnes" }}
+      />
+      <Stack.Screen
+        name="Doces"
+        component={Doces}
+        options={{ title: "Doces" }}
+      />
+      <Stack.Screen
+        name="Massas"
+        component={Massas}
+        options={{ title: "Massas" }}
       />
     </Stack.Navigator>
   );
