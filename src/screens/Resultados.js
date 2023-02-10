@@ -26,20 +26,6 @@ const Resultados = ({ route }) => {
   return (
     <SafeAreaView style={estilos.container}>
       <Text>Você buscou por: {receita}.</Text>
-
-      {loading && <Loading />}
-      <View style={estilos.viewFilmes}>
-        {!loading && (
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={resultados}
-            renderItem={({ item }) => {
-              return (receita = { item });
-            }}
-            keyExtractor={(item) => item.id}
-          />
-        )}
-      </View>
     </SafeAreaView>
   );
 };
