@@ -44,18 +44,15 @@ const Detalhes = ({ route }) => {
         <View style={estilos.lista}>
           <Text style={estilos.titulo1}>Ingredientes:</Text>
           <FlatList
-            key={receita.id}
             data={receita.ingredientes}
             renderItem={({ item }) => (
               <Text style={estilos.texto}>{item}.</Text>
             )}
-            keyExtractor={(item) => item.id}
           />
         </View>
         <View style={estilos.lista}>
           <Text style={estilos.titulo1}>Modo de Preparo:</Text>
           <FlatList
-            key={receita.id}
             data={receita.modoDePreparo}
             renderItem={({ item }) => <Text style={estilos.texto}>{item}</Text>}
             keyExtractor={(item) => item.id}
