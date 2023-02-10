@@ -8,6 +8,8 @@ import Buscar from "./src/screens/Buscar";
 import Categorias from "./src/screens/Categorias";
 import Favoritos from "./src/screens/Favoritos";
 import Detalhes from "./src/screens/Detalhes";
+import Resultados from "./src/screens/Resultados"
+
 
 const App = () => {
   const Tab = createBottomTabNavigator();
@@ -58,6 +60,10 @@ const App = () => {
         <Tab.Screen
             name="Detalhes"
             component={Detalhes}
+          />
+        <Tab.Screen
+            name="Resultados"
+            component={Resultados}
           />
 
           <Tab.Screen
