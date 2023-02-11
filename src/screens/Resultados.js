@@ -2,16 +2,18 @@ import { useEffect, useState } from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import serverApi from "../services/api";
 import Loading from "../components/Loading";
-
+import axios  from "axios";
+import CardReceita from "../components/CardReceita";
 const Resultados = ({ route }) => {
   const { receita } = route.params;
   const [resultados, setResultados] = useState([]);
   const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     async function buscarReceita() {
       try {
-        const resposta = await serverApi.get(`receitas.json`);
-        setResultados(resposta);
+          const resposta = await axios.get(`${serverApi}/receitas.json`);
+        setResultados(resposta.data);
         console.log(resultados);
         setInterval(() => {
           setLoading(false);
@@ -21,16 +23,25 @@ const Resultados = ({ route }) => {
       }
     }
     buscarReceita();
-    if (receita === resultados.url) {
-      resultados.filter(item);
-    }
   }, []);
+  
 
   return (
     <SafeAreaView style={estilos.container}>
       <Text>Você buscou por: {receita}.</Text>
-      {loading && <Loading />}
-      <View style={estilos.viewFilmes}></View>
+      
+    {loading && <Loading />}
+      <View style={estilos.viewFilmes}> 
+        {!loading && (
+          <FlatList
+            data={resultados}
+            renderItem={({ item }) => {
+              return <CardReceita receita={item} />;
+            }}
+            keyExtractor={(item) => item.id}
+          />
+        )}
+      </View>
     </SafeAreaView>
   );
 };

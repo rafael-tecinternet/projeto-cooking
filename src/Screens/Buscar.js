@@ -1,8 +1,9 @@
 import { Alert, Button, StyleSheet, Text, View, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-
 import { useState } from "react";
+
+
 const Buscar = ({ navigation }) => {
   const [receita, setReceita] = useState("");
 
@@ -14,10 +15,10 @@ const Buscar = ({ navigation }) => {
     if (!receita) {
       return Alert.alert("Ops!", "Você deve digitar uma receita!");
     }
-
     navigation.navigate("Resultados", { receita });
   };
-
+  
+  
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.viewForm}>
@@ -26,7 +27,7 @@ const Buscar = ({ navigation }) => {
           placeholder="Busque por uma receita"
           style={estilos.searchInput}
           onChangeText={receitaDigitada}
-        ></TextInput>
+        />
         <Button title="Buscar" color={"#bb0b0b"} onPress={buscarReceita} />
       </View>
     </SafeAreaView>
