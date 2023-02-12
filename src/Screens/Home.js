@@ -5,10 +5,13 @@ import {
   View,
   SafeAreaView,
   ScrollView,
+  StatusBar,
   Image,
 } from "react-native";
 import { useEffect, useState } from "react";
 import serverApi from "../services/api";
+
+
 
 const Home = () => {
   /* Importação das fontes que serão Ultilizadas no projeto, (caso formos ultilizar outros pesos de fontes esses deverão ser carregados como no código abaixo, todas as fonts estão na pasta assets/fonts lá estão todos os pesos que poderemos ultilizar no projeto ) */

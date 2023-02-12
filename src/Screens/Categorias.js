@@ -9,14 +9,14 @@ import {
 import { useFonts } from "expo-font";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import imagemCategoria from "../../assets/images/paleta_de_boi.jpg"
+//import imagemCategoria from "../../assets/images/paleta_de_boi.jpg"
 
-// Acessando recursos do React Navigation (sem props!)
-//const navigation = useNavigation();
+ //Acessando recursos do React Navigation (sem props!)
+  const navigation = useNavigation();
 
-// const navegacaoCategorias = () => {
-//   navigation.navigate();
-// };
+  const navegacaoCategorias = () => {
+  navigation.navigate();
+ };
 
 const Categorias = ({ navigation }) => {
   const [fonteCarregada] = useFonts({
@@ -86,13 +86,13 @@ const Categorias = ({ navigation }) => {
           <Text style={estilos.cardCategoria}>Massas</Text>
         </Pressable>
 
-        <Image
+        {/* <Image
           style={estilos.tinyLogo}
           source={{
             src={"../../assets/images/paleta_de_boi.jpg"},
             
           }}
-        />
+        /> */}
       </View>
     </SafeAreaView>
   );

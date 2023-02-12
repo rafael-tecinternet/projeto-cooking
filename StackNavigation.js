@@ -6,7 +6,7 @@ import Categorias from "./src/screens/Categorias";
 import Favoritos from "./src/screens/Favoritos";
 import Buscar from "./src/screens/Buscar";
 // Realizamos a importação da TelaCategoria para exibição/navegação entre os componentes filhos da mesma
-import TelaCategoria from "./src/screens/Salgados";
+
 import Salgados from "./src/screens/Salgados";
 import Vegano from "./src/screens/Vegano";
 import Doces from "./src/screens/Doces";
