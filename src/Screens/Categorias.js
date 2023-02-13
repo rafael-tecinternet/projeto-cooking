@@ -9,20 +9,25 @@ import {
 import { useFonts } from "expo-font";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-//import imagemCategoria from "../../assets/images/paleta_de_boi.jpg"
+import imagemCategoria from "../../assets/images/paleta_de_boi.jpg"
 
  //Acessando recursos do React Navigation (sem props!)
-  const navigation = useNavigation();
+//   const navigation = useNavigation();
 
-  const navegacaoCategorias = () => {
-  navigation.navigate();
- };
+//   const navegacaoCategorias = () => {
+//   navigation.navigate();
+//  };
 
 const Categorias = ({ navigation }) => {
   const [fonteCarregada] = useFonts({
     merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
   });
+
+  function Header() {
+  // Import result is the URL of your image
+  return <img src={logo} alt="Logo" />;
+}
 
   const [receita, setReceitas] = useState([]);
 
@@ -60,39 +65,33 @@ const Categorias = ({ navigation }) => {
           style={estilos.cardCategoria}
           onPress={() => navigation.navigate("Salgados", {})}
         >
-          <Text>Salgados</Text>
+          <Image style={estilos.tinyLogo} source={require('../../assets/images/risole_de_abobora_com_carne_seca.jpg')}/> 
         </Pressable>
 
         <Pressable
           style={estilos.cardCategoria}
           onPress={() => navigation.navigate("Vegano", {})}
         >
-          <Text>vegano</Text>
+          <Image style={estilos.tinyLogo} source={require('../../assets/images/chutney_de_caju.jpg')}/> 
         </Pressable>
       </View>
       <View style={estilos.categoriaMeio}>
         <Pressable onPress={() => navigation.navigate("Molhos", {})}>
-          <Text style={estilos.cardCategoria}>Molhos</Text>
+        <Image style={estilos.tinyLogo} source={require('../../assets/images/molho_rose.jpg')}/> 
         </Pressable>
         <Pressable onPress={() => navigation.navigate("Carnes", {})}>
-          <Text style={estilos.cardCategoria}>Carnes</Text>
+        <Image style={estilos.tinyLogo} source={require('../../assets/images/paleta_de_boi.jpg')}/> 
         </Pressable>
       </View>
       <View style={estilos.categoriaInferior}>
         <Pressable onPress={() => navigation.navigate("Doces", {})}>
-          <Text style={estilos.cardCategoria}>Doces</Text>
+        <Image style={estilos.tinyLogo} source={require('../../assets/images/bombomCereja.jpg')}/> 
         </Pressable>
         <Pressable onPress={() => navigation.navigate("Massas", {})}>
-          <Text style={estilos.cardCategoria}>Massas</Text>
+        <Image style={estilos.tinyLogo} source={require('../../assets/images/carbonara_light.jpg')}/> 
         </Pressable>
 
-        {/* <Image
-          style={estilos.tinyLogo}
-          source={{
-            src={"../../assets/images/paleta_de_boi.jpg"},
-            
-          }}
-        /> */}
+         
       </View>
     </SafeAreaView>
   );
@@ -128,23 +127,19 @@ const estilos = StyleSheet.create({
     width: "80%",
     padding: 30,
   },
-  cardCategoria: {
-    backgroundColor: "#FFD43D",
-    width: 100,
-    height: 100,
-    margin: 6,
-  },
+ 
   imagem: {
     paddingTop: 50,
     width: 100,
     height: 100,
   },
   tinyLogo: {
-    width: 50,
-    height: 50,
-    paddingTop: 50,
-    width: 100,
-    height: 100,
+    width: 125,
+    height: 130,
+    margin: 15,
+    borderRadius: 6,
+    borderStyle: "solid" ,
+    justifyContent: "space-around"
   },
   logo: {
     width: 66,

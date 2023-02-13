@@ -80,7 +80,7 @@ export function NavegacaoFavoritos() {
       <Stack.Screen
         name="FavoritosStack"
         component={Favoritos}
-        options={{ title: "Favoritos" }}
+        options={{ title: "Favoritos",   headerShown: false  }}
       />
     </Stack.Navigator>
   );
