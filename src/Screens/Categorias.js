@@ -9,9 +9,9 @@ import {
 import { useFonts } from "expo-font";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import imagemCategoria from "../../assets/images/paleta_de_boi.jpg"
+import { LinearGradient } from "expo-linear-gradient";
 
- //Acessando recursos do React Navigation (sem props!)
+//Acessando recursos do React Navigation (sem props!)
 //   const navigation = useNavigation();
 
 //   const navegacaoCategorias = () => {
@@ -25,9 +25,9 @@ const Categorias = ({ navigation }) => {
   });
 
   function Header() {
-  // Import result is the URL of your image
-  return <img src={logo} alt="Logo" />;
-}
+    // Import result is the URL of your image
+    return <img src={logo} alt="Logo" />;
+  }
 
   const [receita, setReceitas] = useState([]);
 
@@ -65,34 +65,68 @@ const Categorias = ({ navigation }) => {
           style={estilos.cardCategoria}
           onPress={() => navigation.navigate("Salgados", {})}
         >
-          <Image style={estilos.tinyLogo} source={require('../../assets/images/risole_de_abobora_com_carne_seca.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Salgados</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/risole_de_abobora_com_carne_seca.jpg")}
+          />
         </Pressable>
 
         <Pressable
           style={estilos.cardCategoria}
           onPress={() => navigation.navigate("Vegano", {})}
         >
-          <Image style={estilos.tinyLogo} source={require('../../assets/images/chutney_de_caju.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Vegano</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/chutney_de_caju.jpg")}
+          />
         </Pressable>
       </View>
       <View style={estilos.categoriaMeio}>
         <Pressable onPress={() => navigation.navigate("Molhos", {})}>
-        <Image style={estilos.tinyLogo} source={require('../../assets/images/molho_rose.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Molhos</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/molho_rose.jpg")}
+          />
         </Pressable>
         <Pressable onPress={() => navigation.navigate("Carnes", {})}>
-        <Image style={estilos.tinyLogo} source={require('../../assets/images/paleta_de_boi.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Carnes</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/paleta_de_boi.jpg")}
+          />
         </Pressable>
       </View>
       <View style={estilos.categoriaInferior}>
         <Pressable onPress={() => navigation.navigate("Doces", {})}>
-        <Image style={estilos.tinyLogo} source={require('../../assets/images/bombomCereja.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Doces</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/bombomCereja.jpg")}
+          />
         </Pressable>
         <Pressable onPress={() => navigation.navigate("Massas", {})}>
-        <Image style={estilos.tinyLogo} source={require('../../assets/images/carbonara_light.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Massas</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/carbonara_light.jpg")}
+          />
         </Pressable>
-
-         
       </View>
+      <LinearGradient
+        style={{
+          height: 45,
+          width: 100,
+          marginTop: 15,
+          borderRadius: 5,
+        }}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 1, y: 0 }}
+        locations={[0.5, 0.7]}
+        colors={["#A62A5C", "#6A2597"]}
+      ></LinearGradient>
     </SafeAreaView>
   );
 };
@@ -107,42 +141,39 @@ const estilos = StyleSheet.create({
     justifyContent: "center",
   },
   categoriaSuperior: {
+    marginTop: 40,
+    marginBottom: 50,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
-    width: "80%",
-    padding: 30,
+    width: "100%",
   },
   categoriaMeio: {
+    marginBottom: 50,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
-    width: "80%",
-    padding: 30,
+    width: "100%",
   },
   categoriaInferior: {
+    marginBottom: 70,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
-    width: "80%",
-    padding: 30,
+    width: "100%",
   },
- 
-  imagem: {
-    paddingTop: 50,
-    width: 100,
-    height: 100,
-  },
+
   tinyLogo: {
-    width: 125,
-    height: 130,
-    margin: 15,
+    marginTop: 5,
+    width: 145,
+    height: 140,
+    margin: 18,
     borderRadius: 6,
-    borderStyle: "solid" ,
-    justifyContent: "space-around"
+    borderStyle: "solid",
+    justifyContent: "space-around",
   },
-  logo: {
-    width: 66,
-    height: 58,
+  textoCategorias: {
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
 });
