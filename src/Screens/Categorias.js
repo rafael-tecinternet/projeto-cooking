@@ -115,7 +115,7 @@ const Categorias = ({ navigation }) => {
           />
         </Pressable>
       </View>
-      <LinearGradient
+      {/* <LinearGradient
         style={{
           height: 45,
           width: 100,
@@ -126,7 +126,7 @@ const Categorias = ({ navigation }) => {
         end={{ x: 1, y: 0 }}
         locations={[0.5, 0.7]}
         colors={["#A62A5C", "#6A2597"]}
-      ></LinearGradient>
+      ></LinearGradient> */}
     </SafeAreaView>
   );
 };
