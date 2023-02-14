@@ -115,18 +115,6 @@ const Categorias = ({ navigation }) => {
           />
         </Pressable>
       </View>
-      {/* <LinearGradient
-        style={{
-          height: 45,
-          width: 100,
-          marginTop: 15,
-          borderRadius: 5,
-        }}
-        start={{ x: 0, y: 1 }}
-        end={{ x: 1, y: 0 }}
-        locations={[0.5, 0.7]}
-        colors={["#A62A5C", "#6A2597"]}
-      ></LinearGradient> */}
     </SafeAreaView>
   );
 };
@@ -141,22 +129,22 @@ const estilos = StyleSheet.create({
     justifyContent: "center",
   },
   categoriaSuperior: {
-    marginTop: 40,
-    marginBottom: 50,
+    marginTop: 50,
+    marginBottom: 10,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
     width: "100%",
   },
   categoriaMeio: {
-    marginBottom: 50,
+    marginBottom: 30,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
     width: "100%",
   },
   categoriaInferior: {
-    marginBottom: 70,
+    marginBottom: 100,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
@@ -167,13 +155,18 @@ const estilos = StyleSheet.create({
     marginTop: 5,
     width: 145,
     height: 140,
-    margin: 18,
+    margin: 10,
     borderRadius: 6,
     borderStyle: "solid",
     justifyContent: "space-around",
   },
   textoCategorias: {
+    paddingLeft: 50,
     flexDirection: "row",
     justifyContent: "space-around",
+    fontFamily: "merienda",
+    fontWeight: "bold",
+    fontSize: 19,
+    color: "#262626",
   },
 });
