@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   StyleSheet,
   Text,
@@ -5,6 +6,8 @@ import {
   Image,
   ScrollView,
   FlatList,
+  Pressable,
+  Alert,
 } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -18,7 +21,31 @@ const Detalhes = ({ route }) => {
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
   });
 
+  const salvar = async () => {
+    const receitasFavoritas = await AsyncStorage.getItem("@favoritos");
+
+    let listaDeReceitas = JSON.parse(receitasFavoritas);
+
+    if (!listaDeReceitas) {
+      listaDeReceitas = [];
+    }
+
+    for (let receitaExistente in listaDeReceitas) {
+      if (listaDeReceitas[receitaExistente].id == receita.id) {
+        Alert.alert("Ops!", "Você já salvou este receita!");
+        Vibration.vibrate();
+        return;
+      }
+    }
+
+    listaDeReceitas.push(receita);
+
+    await AsyncStorage.setItem("@favoritos", JSON.stringify(listaDeReceitas));
+    Alert.alert("Favoritos", "receita salva com sucesso!");
+  };
+
   if (!fonteCarregada) return <Text>Fonte sendo carregada...</Text>;
+
   return (
     <SafeAreaView style={estilos.container}>
       <ScrollView>
@@ -40,6 +67,14 @@ const Detalhes = ({ route }) => {
           />{" "}
           {receita.tempoDePreparo}
         </Text>
+
+        <View>
+          <Pressable style={estilos.botao} onPress={salvar}>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="star" size={16} color={"gold"} /> Salvar
+            </Text>
+          </Pressable>
+        </View>
 
         <View style={estilos.lista}>
           <Text style={estilos.titulo1}>Ingredientes:</Text>
@@ -91,5 +126,15 @@ const estilos = StyleSheet.create({
     fontFamily: "manrope",
     fontSize: 15,
     marginBottom: 16,
+  },
+  botao: {
+    padding: 8,
+    borderWidth: 1,
+    borderColor: "#5451a6",
+  },
+  textoBotao: {
+    color: "#5451a6",
+    fontSize: 12,
+    textTransform: "uppercase",
   },
 });

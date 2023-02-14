@@ -52,6 +52,7 @@ const HomeTabs = () => {
         name="Favoritos"
         component={Favoritos}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color, size, focused }) => {
             return <Ionicons name="star" size={size} color={color} />;
           },
