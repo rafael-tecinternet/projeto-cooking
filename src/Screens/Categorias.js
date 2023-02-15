@@ -71,7 +71,7 @@ const Categorias = ({ navigation }) => {
         <Text>Vegano</Text>
         <Pressable
           style={estilos.cardCategoria}
-          onPress={() => navigation.navigate("Vegano", {})}
+          onPress={() => navigation.navigate("Vegano")}
         >
           <Image style={estilos.tinyLogo} source={require('../../assets/images/chutney_de_caju.jpg')}/> 
         </Pressable>

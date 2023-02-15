@@ -40,6 +40,10 @@ const Carnes = ({ navigation }) => {
             imagem: dados[receita].imagem,
           };
           listaDeReceitas.push(objetoReceita);
+
+          listaDeReceitas = listaDeReceitas.filter(
+            (cadaReceita) => cadaReceita.categoria === "vegano"
+          )
         }
         setReceitas(listaDeReceitas);
       } catch (error) {

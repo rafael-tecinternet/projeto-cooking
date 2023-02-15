@@ -15,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
 
 const Vegano = ({ navigation }) => {
+  // console.log(categoria);
   const [fonteCarregada] = useFonts({
     merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
@@ -40,6 +41,11 @@ const Vegano = ({ navigation }) => {
             imagem: dados[receita].imagem,
           };
           listaDeReceitas.push(objetoReceita);
+
+          listaDeReceitas = listaDeReceitas.filter(
+            (cadaReceita) => cadaReceita.categoria === "vegano"
+          )
+
         }
         setReceitas(listaDeReceitas);
       } catch (error) {

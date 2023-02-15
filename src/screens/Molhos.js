@@ -40,6 +40,10 @@ const Molhos = ({ navigation }) => {
             imagem: dados[receita].imagem,
           };
           listaDeReceitas.push(objetoReceita);
+
+          listaDeReceitas = listaDeReceitas.filter(
+            (cadaReceita) => cadaReceita.categoria === "molhos"
+          )
         }
         setReceitas(listaDeReceitas);
       } catch (error) {

@@ -40,6 +40,10 @@ const Doces = ({ navigation }) => {
             imagem: dados[receita].imagem,
           };
           listaDeReceitas.push(objetoReceita);
+
+          listaDeReceitas = listaDeReceitas.filter(
+            (cadaReceita) => cadaReceita.categoria === "doces"
+          )
         }
         setReceitas(listaDeReceitas);
       } catch (error) {

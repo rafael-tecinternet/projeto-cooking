@@ -40,6 +40,10 @@ const Salgados = ({ navigation }) => {
             imagem: dados[receita].imagem,
           };
           listaDeReceitas.push(objetoReceita);
+
+          listaDeReceitas = listaDeReceitas.filter(
+            (cadaReceita) => cadaReceita.categoria === "salgados"
+          )
         }
         setReceitas(listaDeReceitas);
       } catch (error) {
