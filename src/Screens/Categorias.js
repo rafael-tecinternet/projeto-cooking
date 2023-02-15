@@ -68,6 +68,7 @@ const Categorias = ({ navigation }) => {
           <Image style={estilos.tinyLogo} source={require('../../assets/images/risole_de_abobora_com_carne_seca.jpg')}/> 
         </Pressable>
 
+        <Text>Vegano</Text>
         <Pressable
           style={estilos.cardCategoria}
           onPress={() => navigation.navigate("Vegano", {})}
@@ -80,14 +81,18 @@ const Categorias = ({ navigation }) => {
         <Image style={estilos.tinyLogo} source={require('../../assets/images/molho_rose.jpg')}/> 
         </Pressable>
         
+        <Text>Carnes</Text>
         <Pressable onPress={() => navigation.navigate("Carnes", {})}>
         <Image style={estilos.tinyLogo} source={require('../../assets/images/paleta_de_boi.jpg')}/> 
         </Pressable>
       </View>
+
+      <Text>Doces</Text>
       <View style={estilos.categoriaInferior}>
         <Pressable onPress={() => navigation.navigate("Doces", {})}>
         <Image style={estilos.tinyLogo} source={require('../../assets/images/bombomCereja.jpg')}/> 
         </Pressable>
+        <Text>Massas</Text>
         <Pressable onPress={() => navigation.navigate("Massas", {})}>
         <Image style={estilos.tinyLogo} source={require('../../assets/images/carbonara_light.jpg')}/> 
         </Pressable>
