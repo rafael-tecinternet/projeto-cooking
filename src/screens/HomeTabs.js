@@ -43,6 +43,7 @@ const HomeTabs = () => {
         name="Categorias"
         component={Categorias}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color, size, focused }) => {
             return <Ionicons name="book" size={size} color={color} />;
           },
