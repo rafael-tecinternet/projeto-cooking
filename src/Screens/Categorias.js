@@ -65,43 +65,60 @@ const Categorias = ({ navigation }) => {
           style={estilos.cardCategoria}
           onPress={() => navigation.navigate("Salgados", {})}
         >
-          <Image style={estilos.tinyLogo} source={require('../../assets/images/risole_de_abobora_com_carne_seca.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Salgados</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/risole_de_abobora_com_carne_seca.jpg")}
+          />
         </Pressable>
 
-        <Text>Vegano</Text>
         <Pressable
           style={estilos.cardCategoria}
-          onPress={() => navigation.navigate("Vegano")}
+          onPress={() => navigation.navigate("Vegano", {})}
         >
-          <Image style={estilos.tinyLogo} source={require('../../assets/images/chutney_de_caju.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Vegano</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/chutney_de_caju.jpg")}
+          />
         </Pressable>
       </View>
       <View style={estilos.categoriaMeio}>
         <Pressable onPress={() => navigation.navigate("Molhos", {})}>
-        <Image style={estilos.tinyLogo} source={require('../../assets/images/molho_rose.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Molhos</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/molho_rose.jpg")}
+          />
         </Pressable>
-        
-        <Text>Carnes</Text>
         <Pressable onPress={() => navigation.navigate("Carnes", {})}>
-        <Image style={estilos.tinyLogo} source={require('../../assets/images/paleta_de_boi.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Carnes</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/paleta_de_boi.jpg")}
+          />
         </Pressable>
       </View>
-
-      <Text>Doces</Text>
       <View style={estilos.categoriaInferior}>
         <Pressable onPress={() => navigation.navigate("Doces", {})}>
-        <Image style={estilos.tinyLogo} source={require('../../assets/images/bombomCereja.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Doces</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/bombomCereja.jpg")}
+          />
         </Pressable>
-        <Text>Massas</Text>
         <Pressable onPress={() => navigation.navigate("Massas", {})}>
-        <Image style={estilos.tinyLogo} source={require('../../assets/images/carbonara_light.jpg')}/> 
+          <Text style={estilos.textoCategorias}>Massas</Text>
+          <Image
+            style={estilos.tinyLogo}
+            source={require("../../assets/images/carbonara_light.jpg")}
+          />
         </Pressable>
-
-         
       </View>
     </SafeAreaView>
   );
 };
+
 
 export default Categorias;
 
