@@ -10,19 +10,14 @@ import { useFonts } from "expo-font";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import imagemCategoria from "../../assets/images/paleta_de_boi.jpg";
+import serverApi from "../services/api";
 
-//Acessando recursos do React Navigation (sem props!)
-//   const navigation = useNavigation();
-
-//   const navegacaoCategorias = () => {
-//   navigation.navigate();
-//  };
-
-const Categorias = ({ navigation }) => {
+const Categorias = () => {
   const [fonteCarregada] = useFonts({
     merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
   });
+  const navigation = useNavigation();
 
   function Header() {
     // Import result is the URL of your image
