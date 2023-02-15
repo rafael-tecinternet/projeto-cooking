@@ -41,6 +41,7 @@ const Massas = ({ navigation }) => {
           };
           listaDeReceitas.push(objetoReceita);
 
+          /* aqui ele vai filtrar apenas receitas de uma categoria especifica, no caso as receitas dentro das aspas */
           listaDeReceitas = listaDeReceitas.filter(
             (cadaReceita) => cadaReceita.categoria === "massas"
           )
