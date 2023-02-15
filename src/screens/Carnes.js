@@ -42,7 +42,7 @@ const Carnes = ({ navigation }) => {
           listaDeReceitas.push(objetoReceita);
 
           listaDeReceitas = listaDeReceitas.filter(
-            (cadaReceita) => cadaReceita.categoria === "vegano"
+            (cadaReceita) => cadaReceita.categoria === "carnes"
           )
         }
         setReceitas(listaDeReceitas);
