@@ -12,7 +12,9 @@ const Resultados = ({ route }) => {
   useEffect(() => {
     async function buscarReceita() {
       try {
-        const resposta = await axios.get(`${serverApi}/receitas.json`);
+        const resposta = await axios.get(
+          `${serverApi}/receitas.json?titulo=${receita}`
+        );
         setResultados(resposta.data);
         console.log(resultados);
         setInterval(() => {

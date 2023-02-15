@@ -84,18 +84,16 @@ const Favoritos = () => {
           </Text>
         </Pressable>
       </View>
-      {listaFavoritos.map((receitaFavorita, indice) => {
-        return (
-          <Pressable
-            onPress={verDetalhes.bind(this, receitaFavorita)}
-            key={receitaFavorita.id}
-            style={estilos.itemFilme}
-          >
-            <Text style={estilos.titulo1}>{receitaFavorita.titulo}</Text>
-            <View style={estilos.corpo} key={receitaFavorita.id}>
+      <ScrollView>
+        {listaFavoritos.map((receitaFavorita, indice) => {
+          return (
+            <View>
               <Pressable
+                // onPress={verDetalhes}
+                // onPress={() => verDetalhes(filmeFavoritos)}
                 onPress={verDetalhes.bind(this, receitaFavorita)}
                 key={receitaFavorita.id}
+                style={estilos.itemFilme}
               >
                 <Image
                   source={{
@@ -103,35 +101,40 @@ const Favoritos = () => {
                   }}
                   style={estilos.imagem}
                 />
-              </Pressable>
+                <View style={estilos.descricao}>
+                  <Text style={estilos.titulo}>{receitaFavorita.titulo}</Text>
+                  <Text style={estilos.categoria}>
+                    {receitaFavorita.categoria}
+                  </Text>
+                  <Text style={estilos.icones}>
+                    <Ionicons
+                      name="restaurant-outline"
+                      size={16}
+                      color="black"
+                    />{" "}
+                    {receitaFavorita.rendimento}{" "}
+                    <MaterialCommunityIcons
+                      name="timer-settings-outline"
+                      size={16}
+                      color="black"
+                    />{" "}
+                    {receitaFavorita.tempoDePreparo}
+                  </Text>
+                </View>
 
-              <View style={estilos.viewCategoria}>
-                <Text style={estilos.icones}>
-                  <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
-                  {receitaFavorita.rendimento}{" "}
-                  <MaterialCommunityIcons
-                    name="timer-settings-outline"
-                    size={16}
-                    color="black"
-                  />{" "}
-                  {receitaFavorita.tempoDePreparo}
-                </Text>
                 <Pressable
                   style={estilos.botaoExcluir}
                   // onPress={excluirUmFavoritos}
                   // onPress={() => excluirUmFavoritos(indice)}
                   onPress={excluirUmFavoritos.bind(this, indice)}
                 >
-                  <Text>
-                    <Ionicons name="trash" size={16} color="white" /> Excluir
-                    receita
-                  </Text>
+                  <Ionicons name="trash" size={16} color="white" />
                 </Pressable>
-              </View>
+              </Pressable>
             </View>
-          </Pressable>
-        );
-      })}
+          );
+        })}
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -142,46 +145,25 @@ const estilos = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FCF6EE",
-    alignItems: "center",
+    marginBottom: 50,
   },
-  titulo1: {
-    fontSize: 18.5,
-    padding: 16,
-    fontFamily: "merienda",
-    textTransform: "capitalize",
-    textAlign: "center",
-  },
-  corpo: {
-    backgroundColor: "gold",
+  itemFilme: {
     flexDirection: "row",
-  },
-  icones: {
-    fontFamily: "manrope",
-    fontSize: 12,
-    paddingTop: 6,
-  },
-  imagem: {
-    width: 150,
-    height: 150,
-    borderRadius: 8,
-  },
-  categoria: {
-    textTransform: "capitalize",
-    padding: 8,
-    fontFamily: "merienda",
-    fontSize: 16,
-  },
-  viewCategoria: {
+    backgroundColor: "#cccccc",
+    marginVertical: 8,
+    borderRadius: 4,
     alignItems: "center",
-    backgroundColor: "pink",
-    justifyContent: "space-around",
-    width: "100%",
   },
   botaoExcluir: {
     backgroundColor: "#c0220b",
     padding: 8,
     borderRadius: 4,
-    color: "white",
+  },
+  cabecalho: {
+    marginVertical: 8,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   botaoExcluirTudo: {
     borderWidth: 1,
@@ -192,16 +174,29 @@ const estilos = StyleSheet.create({
   textoExcluirTudo: {
     color: "#c0220b",
   },
-  cabecalho: {
-    marginVertical: 8,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    padding: 8,
+  titulo: {
+    fontFamily: "merienda",
+    textTransform: "capitalize",
+    marginTop: 16,
+    textAlign: "center",
   },
-  itemFilme: {
-    padding: 8,
-    backgroundColor: "#d3d3d3",
-    width: "100%",
+  imagem: {
+    width: 150,
+    height: 150,
+  },
+  descricao: {
+    alignItems: "center",
+    width: "55%",
+    height: "100%",
+  },
+  categoria: {
+    textTransform: "capitalize",
+    fontFamily: "merienda",
+    marginTop: 8,
+  },
+  icones: {
+    fontFamily: "manrope",
+    fontSize: 12,
+    marginTop: 16,
   },
 });

@@ -71,7 +71,7 @@ const Detalhes = ({ route }) => {
         <View>
           <Pressable style={estilos.botao} onPress={salvar}>
             <Text style={estilos.textoBotao}>
-              <Ionicons name="star" size={16} color={"gold"} /> Salvar
+              <Ionicons name="star" size={22} color={"gold"} /> Salvar
             </Text>
           </Pressable>
         </View>
@@ -101,12 +101,12 @@ const Detalhes = ({ route }) => {
 export default Detalhes;
 
 const estilos = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, backgroundColor: "#FCF6EE" },
   imagem: {
     height: 250,
   },
   titulo: {
-    fontSize: 18,
+    fontSize: 20,
     fontFamily: "merienda",
     padding: 16,
   },
@@ -118,23 +118,21 @@ const estilos = StyleSheet.create({
     margin: 16,
   },
   titulo1: {
-    fontSize: 16,
+    fontSize: 20,
     fontFamily: "merienda",
-    marginVertical: 16,
+    marginBottom: 16,
   },
   texto: {
     fontFamily: "manrope",
-    fontSize: 15,
-    marginBottom: 16,
+    fontSize: 17,
+    marginBottom: 24,
   },
   botao: {
-    padding: 8,
-    borderWidth: 1,
-    borderColor: "#5451a6",
+    padding: 12,
+    marginTop: 8,
   },
   textoBotao: {
-    color: "#5451a6",
-    fontSize: 12,
-    textTransform: "uppercase",
+    fontFamily: "manrope",
+    fontSize: 16,
   },
 });
