@@ -3,7 +3,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 
-
 const Buscar = ({ navigation }) => {
   const [receita, setReceita] = useState("");
 
@@ -17,8 +16,7 @@ const Buscar = ({ navigation }) => {
     }
     navigation.navigate("Resultados", { receita });
   };
-  
-  
+
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.viewForm}>
@@ -39,6 +37,7 @@ export default Buscar;
 const estilos = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#FCF6EE",
   },
   viewForm: {
     flexDirection: "row",
