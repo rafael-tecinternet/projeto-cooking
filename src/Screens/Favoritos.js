@@ -168,10 +168,11 @@ const estilos = StyleSheet.create({
   },
   itemFilme: {
     flexDirection: "row",
-    backgroundColor: "#DBE3BA",
     marginVertical: 8,
     borderRadius: 4,
     alignItems: "center",
+    borderWidth: 1,
+    backgroundColor: "#f8f8f8"
   },
   botaoExcluir: {
     backgroundColor: "#c0220b",

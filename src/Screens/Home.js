@@ -108,6 +108,7 @@ const estilos = StyleSheet.create({
     fontFamily: "merienda",
     textTransform: "capitalize",
     textAlign: "center",
+    width: 380
   },
   corpo: {
     marginBottom: 2,

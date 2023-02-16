@@ -124,7 +124,7 @@ const estilos = StyleSheet.create({
   },
   botao: {
     padding: 12,
-    marginTop: 8,
+    marginTop: 14,
   },
   textoBotao: {
     fontFamily: "manrope",

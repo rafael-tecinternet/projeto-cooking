@@ -6,7 +6,7 @@ import axios from "axios";
 import CardReceita from "../components/CardReceita";
 
 const Resultados = ({ route }) => {
-  const { receita } = route.params;
+  const {receita } = route.params;
   const [resultados, setResultados] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,8 +14,7 @@ const Resultados = ({ route }) => {
     async function buscarReceita() {
       try {
         const resposta = await axios.get(`${serverApi}/receitas.json`);
-        const receitasFiltradas = Object.values(resposta.data).filter(item => item.titulo.includes(receita));
-        setResultados(receitasFiltradas);
+        setResultados(resposta.data);
         console.log(resultados);
         setLoading(false);
       } catch (error) {
