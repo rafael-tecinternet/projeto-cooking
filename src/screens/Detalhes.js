@@ -78,20 +78,15 @@ const Detalhes = ({ route }) => {
 
         <View style={estilos.lista}>
           <Text style={estilos.titulo1}>Ingredientes:</Text>
-          <FlatList
-            data={receita.ingredientes}
-            renderItem={({ item }) => (
-              <Text style={estilos.texto}>{item}.</Text>
-            )}
-          />
+          {receita.ingredientes.map((item, id) => (
+    <Text key={id} style={estilos.texto}>{item}.</Text>
+  ))}
         </View>
         <View style={estilos.lista}>
           <Text style={estilos.titulo1}>Modo de Preparo:</Text>
-          <FlatList
-            data={receita.modoDePreparo}
-            renderItem={({ item }) => <Text style={estilos.texto}>{item}</Text>}
-            keyExtractor={(item) => item.id}
-          />
+          {receita.modoDePreparo.map((item, id) => (
+    <Text key={id} style={estilos.texto}>{item}</Text>
+  ))}
         </View>
       </ScrollView>
     </SafeAreaView>

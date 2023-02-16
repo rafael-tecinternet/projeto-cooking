@@ -57,46 +57,39 @@ const Home = ({ navigation }) => {
 
   return (
     <SafeAreaView style={estilos.container}>
-      {/* <FlatList
-        data={receitas}
-        renderItem={({ item }) => (
-          <View>
-            <Text>{item.modoDePreparo}</Text>
-          </View>
-        )}
-      /> */}
-      <ScrollView style={estilos.view}>
-        {receitas.map((receita) => (
-          <View style={estilos.corpo} key={receita.id}>
-            <Text style={estilos.titulo1}>{receita.titulo}</Text>
-            <Pressable
-              onPress={verDetalhes.bind(this, receita)}
-              key={receita.id}
-            >
+      
+    
+      <FlatList
+          data={receitas}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+          <View style={estilos.corpo} key={item.id}>
+            <Text style={estilos.titulo1}>{item.titulo}</Text>
+            <Pressable onPress={verDetalhes.bind(this, item)}>
               <Image
-                source={{
-                  uri: `http://10.20.48.26/servidor-imagens/${receita.imagem}`,
-                }}
-                style={estilos.imagem}
+              source={{
+                uri: `http://10.20.48.26/servidor-imagens/${item.imagem}`,
+              }}
+              style={estilos.imagem}
               />
             </Pressable>
 
-            <View style={estilos.viewCategoria}>
-              <Text style={estilos.categoria}>{receita.categoria}</Text>
-              <Text style={estilos.icones}>
-                <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
-                {receita.rendimento}{" "}
-                <MaterialCommunityIcons
-                  name="timer-settings-outline"
-                  size={16}
-                  color="black"
-                />{" "}
-                {receita.tempoDePreparo}
-              </Text>
-            </View>
+          <View style={estilos.viewCategoria}>
+            <Text style={estilos.categoria}>{item.categoria}</Text>
+            <Text style={estilos.icones}>
+              <Ionicons name="restaurant-outline" size={16} color="black" />{" "}
+              {item.rendimento}{" "}
+              <MaterialCommunityIcons
+                name="timer-settings-outline"
+                size={16}
+                color="black"
+              />{" "}
+              {item.tempoDePreparo}
+            </Text>
           </View>
-        ))}
-      </ScrollView>
+        </View>
+      )}/>
+      
     </SafeAreaView>
   );
 };

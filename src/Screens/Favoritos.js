@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
 import {
   Alert,
   Pressable,
@@ -11,7 +12,6 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Favoritos = () => {
@@ -32,7 +32,6 @@ const Favoritos = () => {
       }
     }
     carregarFavoritos();
-    console.log(listaFavoritos);
   }, []);
 
   const verDetalhes = (receitaSelecionada) => {
@@ -63,6 +62,21 @@ const Favoritos = () => {
     );
   };
   const excluirUmFavoritos = async (indice) => {
+    Alert.alert(
+      "Excluir ?",
+      "Tem certeza que deseja excluir dos favoritos ?",
+      [
+        {
+          text: "Cancelar",
+          onPress: () => {
+            return false;
+          },
+          style: "cancel", // SOMENTE NO IOS
+        },
+        {
+          text: "Sim",
+          onPress: async () => {
+             
     listaFavoritos.splice(indice, 1);
 
     await AsyncStorage.setItem("@favoritos", JSON.stringify(listaFavoritos));
@@ -72,6 +86,12 @@ const Favoritos = () => {
     );
 
     setListaFavoritos(listaDeReceitas);
+          },
+          style: "destructive", //SOMENTE NO IOS
+        },
+      ]
+    );
+   
   };
   return (
     <SafeAreaView style={estilos.container}>
@@ -87,12 +107,11 @@ const Favoritos = () => {
       <ScrollView>
         {listaFavoritos.map((receitaFavorita, indice) => {
           return (
-            <View>
+            <View key={receitaFavorita.id}>
               <Pressable
                 // onPress={verDetalhes}
                 // onPress={() => verDetalhes(filmeFavoritos)}
                 onPress={verDetalhes.bind(this, receitaFavorita)}
-                key={receitaFavorita.id}
                 style={estilos.itemFilme}
               >
                 <Image
@@ -149,7 +168,7 @@ const estilos = StyleSheet.create({
   },
   itemFilme: {
     flexDirection: "row",
-    backgroundColor: "#cccccc",
+    backgroundColor: "#DBE3BA",
     marginVertical: 8,
     borderRadius: 4,
     alignItems: "center",

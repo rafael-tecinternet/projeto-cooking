@@ -9,7 +9,7 @@ import {
 import { useFonts } from "expo-font";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import imagemCategoria from "../../assets/images/paleta_de_boi.jpg";
+
 import serverApi from "../services/api";
 
 const Categorias = () => {
@@ -18,11 +18,6 @@ const Categorias = () => {
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
   });
   const navigation = useNavigation();
-
-  function Header() {
-    // Import result is the URL of your image
-    return <img src={logo} alt="Logo" />;
-  }
 
   const [receita, setReceitas] = useState([]);
 
@@ -125,43 +120,34 @@ const estilos = StyleSheet.create({
   },
   categoriaSuperior: {
     marginTop: 50,
-    marginBottom: 10,
+    marginBottom: 30,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "flex-start",
     width: "100%",
   },
   categoriaMeio: {
     marginBottom: 30,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "flex-start",
     width: "100%",
   },
   categoriaInferior: {
     marginBottom: 100,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "flex-start",
     width: "100%",
   },
 
   tinyLogo: {
     marginTop: 5,
-    width: 145,
-    height: 140,
+    width: 160,
+    height: 160,
     margin: 10,
-    borderRadius: 6,
-    borderStyle: "solid",
-    justifyContent: "space-around",
+    borderRadius: 18,
   },
   textoCategorias: {
-    paddingLeft: 50,
-    flexDirection: "row",
-    justifyContent: "space-around",
+    textAlign:"center",
     fontFamily: "merienda",
-    fontWeight: "bold",
     fontSize: 19,
-    color: "#262626",
   },
 });

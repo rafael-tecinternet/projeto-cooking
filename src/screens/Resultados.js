@@ -4,6 +4,7 @@ import serverApi from "../services/api";
 import Loading from "../components/Loading";
 import axios from "axios";
 import CardReceita from "../components/CardReceita";
+
 const Resultados = ({ route }) => {
   const { receita } = route.params;
   const [resultados, setResultados] = useState([]);
@@ -12,20 +13,18 @@ const Resultados = ({ route }) => {
   useEffect(() => {
     async function buscarReceita() {
       try {
-        const resposta = await axios.get(
-          `${serverApi}/receitas.json?titulo=${receita}`
-        );
-        setResultados(resposta.data);
+        const resposta = await axios.get(`${serverApi}/receitas.json`);
+        const receitasFiltradas = Object.values(resposta.data).filter(item => item.titulo.includes(receita));
+        setResultados(receitasFiltradas);
         console.log(resultados);
-        setInterval(() => {
-          setLoading(false);
-        }, 3000);
+        setLoading(false);
       } catch (error) {
         console.log("Deu Ruim na busca da API: " + error.message);
       }
     }
     buscarReceita();
-  }, []);
+  }, [receita]);
+
 
   return (
     <SafeAreaView style={estilos.container}>

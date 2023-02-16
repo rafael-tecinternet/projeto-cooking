@@ -22,14 +22,22 @@ const App = () => {
             component={HomeTabs}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="Detalhes" component={Detalhes} />
-          <Stack.Screen name="Resultados" component={Resultados} />
-          <Stack.Screen name="Carnes" component={Carnes} />
-          <Stack.Screen name="Doces" component={Doces} />
-          <Stack.Screen name="Massas" component={Massas} />
-          <Stack.Screen name="Molhos" component={Molhos} />
-          <Stack.Screen name="Salgados" component={Salgados} />
-          <Stack.Screen name="Vegano" component={Vegano} />
+          <Stack.Screen name="Detalhes" component={Detalhes} options={{headerStyle: {
+          backgroundColor: "#FCF6EE"}}}/>
+          <Stack.Screen name="Resultados" component={Resultados} options={{headerStyle: {
+          backgroundColor: "#FCF6EE"}}} />
+          <Stack.Screen name="Carnes" component={Carnes} options={{headerStyle: {
+          backgroundColor: "#FCF6EE"}}}/>
+          <Stack.Screen name="Doces" component={Doces} options={{headerStyle: {
+          backgroundColor: "#FCF6EE"}}}/>
+          <Stack.Screen name="Massas" component={Massas} options={{headerStyle: {
+          backgroundColor: "#FCF6EE"}}}/>
+          <Stack.Screen name="Molhos" component={Molhos} options={{headerStyle: {
+          backgroundColor: "#FCF6EE"}}}/>
+          <Stack.Screen name="Salgados" component={Salgados} options={{headerStyle: {
+          backgroundColor: "#FCF6EE"}}}/>
+          <Stack.Screen name="Vegano" component={Vegano} options={{headerStyle: {
+          backgroundColor: "#FCF6EE"}}}/>
         </Stack.Navigator>
       </NavigationContainer>
     </>
