@@ -4,7 +4,7 @@ import {
   Alert,
   Pressable,
   SafeAreaView,
-  ScrollView,
+  FlatList,
   StyleSheet,
   Text,
   View,
@@ -104,26 +104,24 @@ const Favoritos = () => {
           </Text>
         </Pressable>
       </View>
-      <ScrollView>
-        {listaFavoritos.map((receitaFavorita, indice) => {
-          return (
-            <View key={receitaFavorita.id}>
-              <Pressable
-                // onPress={verDetalhes}
-                // onPress={() => verDetalhes(filmeFavoritos)}
-                onPress={verDetalhes.bind(this, receitaFavorita)}
-                style={estilos.itemFilme}
-              >
-                <Image
-                  source={{
-                    uri: `http://10.20.48.26/servidor-imagens/${receitaFavorita.imagem}`,
-                  }}
-                  style={estilos.imagem}
-                />
+      <FlatList
+        data={listaFavoritos}
+        renderItem={({ item, id }) => (
+          <View key={item.id}>
+            <Pressable
+              onPress={verDetalhes.bind(this, item)}
+              style={estilos.itemFilme}
+            >
+            <Image
+              source={{
+              uri: `http://10.20.48.26/servidor-imagens/${item.imagem}`,
+              }}
+              style={estilos.imagem}
+            />
                 <View style={estilos.descricao}>
-                  <Text style={estilos.titulo}>{receitaFavorita.titulo}</Text>
+                  <Text style={estilos.titulo}>{item.titulo}</Text>
                   <Text style={estilos.categoria}>
-                    {receitaFavorita.categoria}
+                    {item.categoria}
                   </Text>
                   <Text style={estilos.icones}>
                     <Ionicons
@@ -131,29 +129,27 @@ const Favoritos = () => {
                       size={16}
                       color="black"
                     />{" "}
-                    {receitaFavorita.rendimento}{" "}
+                    {item.rendimento}{" "}
                     <MaterialCommunityIcons
                       name="timer-settings-outline"
                       size={16}
                       color="black"
                     />{" "}
-                    {receitaFavorita.tempoDePreparo}
+                    {item.tempoDePreparo}
                   </Text>
                 </View>
 
                 <Pressable
                   style={estilos.botaoExcluir}
-                  // onPress={excluirUmFavoritos}
-                  // onPress={() => excluirUmFavoritos(indice)}
-                  onPress={excluirUmFavoritos.bind(this, indice)}
+                  onPress={excluirUmFavoritos.bind(this, id)}
                 >
                   <Ionicons name="trash" size={16} color="white" />
                 </Pressable>
-              </Pressable>
-            </View>
-          );
-        })}
-      </ScrollView>
+            </Pressable>
+          </View>
+        )}
+      />
+
     </SafeAreaView>
   );
 };

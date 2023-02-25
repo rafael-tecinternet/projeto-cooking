@@ -3,7 +3,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet, StatusBar } from "react-native";
 import HomeTabs from "./src/screens/HomeTabs";
 import Detalhes from "./src/screens/Detalhes";
-import Resultados from "./src/screens/Resultados";
 import Carnes from "./src/screens/Carnes";
 import Doces from "./src/screens/Doces";
 import Massas from "./src/screens/Massas";
@@ -24,8 +23,6 @@ const App = () => {
           />
           <Stack.Screen name="Detalhes" component={Detalhes} options={{headerStyle: {
           backgroundColor: "#FCF6EE"}}}/>
-          <Stack.Screen name="Resultados" component={Resultados} options={{headerStyle: {
-          backgroundColor: "#FCF6EE"}}} />
           <Stack.Screen name="Carnes" component={Carnes} options={{headerStyle: {
           backgroundColor: "#FCF6EE"}}}/>
           <Stack.Screen name="Doces" component={Doces} options={{headerStyle: {

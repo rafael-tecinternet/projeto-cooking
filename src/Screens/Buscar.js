@@ -1,60 +1,244 @@
-import { Alert, Button, StyleSheet, Text, View, TextInput } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useState, useEffect } from "react";
+import {
+  SafeAreaView,
+  View,
+  TextInput,
+  FlatList,
+  StyleSheet,
+  StatusBar,
+  Alert,
+  Text,
+  Pressable,
+  Image
+} from "react-native";
+import serverApi from "../services/api";
+import axios from "axios";
 import { Ionicons } from "@expo/vector-icons";
-import { useState } from "react";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Loading from "../components/Loading";
 
-const Buscar = ({ navigation }) => {
-  const [receita, setReceita] = useState("");
-
-  const receitaDigitada = (valorDigitado) => {
-    setReceita(valorDigitado);
-  };
-
-  const buscarReceita = () => {
-    if (!receita) {
-      return Alert.alert("Ops!", "Você deve digitar uma receita!");
+const Buscar = () => {
+  const [searchText, setSearchText] = useState( "");
+  const [receita, setReceitas] = useState();
+  const [list, setList] = useState();
+  const [loading, setLoading] = useState(true);
+  console.log(searchText);
+  const navigation = useNavigation();
+  useEffect(() => {
+    async function todosreceita() {
+      try {
+        const resposta = await axios.get(`${serverApi}/receitas.json`);
+        const dados = await resposta.data;
+        let listaDeReceitas = [];
+        for (const receita in dados) {
+          const objetoReceita = {
+            id: receita,
+            titulo: dados[receita].titulo,
+            ingredientes: dados[receita].ingredientes,
+            modoDePreparo: dados[receita].modoDePreparo,
+            rendimento: dados[receita].rendimento,
+            tempoDePreparo: dados[receita].tempoDePreparo,
+            categoria: dados[receita].categoria,
+            imagem: dados[receita].imagem,
+          };
+          listaDeReceitas.push(objetoReceita);
+        }
+        setReceitas(listaDeReceitas);
+        setList(listaDeReceitas);
+      } catch (error) {
+        console.log("Deu ruim na busca da API: " + error.message);
+      }
     }
-    navigation.navigate("Resultados", { receita });
+    todosreceita();
+  }, []);
+
+  /* filtro */
+
+  const handleInputClick = () => {
+    setSearchText("");
   };
 
+  useEffect(() => {
+    if (!searchText || !receita) {
+      setList(receita || []);
+    } else {
+      setList(
+        receita.filter(
+          (item) =>
+            item.titulo.toLowerCase().indexOf(searchText.toLowerCase()) >
+              -1 ||
+            item.categoria.toLowerCase().indexOf(searchText.toLowerCase()) > -1
+        )
+      );
+    }
+  }, [searchText, receita]);
+
+  const verDetalhes = (receitaSelecionado) => {
+    navigation.navigate("Detalhes", { receita: receitaSelecionado });
+  };
+  
   return (
     <SafeAreaView style={estilos.container}>
-      <View style={estilos.viewForm}>
-        <Ionicons name="search" size={20} color="#000" />
+      <View style={estilos.searchArea}>
         <TextInput
-          placeholder="Busque por uma receita"
-          style={estilos.searchInput}
-          onChangeText={receitaDigitada}
+          style={estilos.input}
+          placeholder="Pesquise uma receita"
+          placeholderTextColor="#888"
+          value={searchText}
+          onChangeText={(texto) => {
+            setSearchText(texto);
+          }}
+          onFocus={handleInputClick}
         />
-        <Button title="Buscar" color={"#bb0b0b"} onPress={buscarReceita} />
-      </View>
+      </View>      
+
+      
+      {searchText ? (
+        <Text style={estilos.textoBusca}>
+          Você pesquisou por :
+          <Text style={{ fontWeight: "bold" }}> {searchText}</Text>
+        </Text>
+      ) : null}
+
+      
+
+      {searchText ? (
+        <FlatList
+          data={list}
+          style={estilos.list}
+          renderItem={({ item }) => (
+            <View key={item.id}>
+              <Pressable
+                onPress={verDetalhes.bind(this, item)}
+                style={estilos.itemFilme}
+              >
+                <Image
+                  source={{
+                    uri: `http://10.20.48.26/servidor-imagens/${item.imagem}`,
+                  }}
+                  style={estilos.imagem}
+                />
+                <View style={estilos.descricao}>
+                  <Text style={estilos.titulo}>{item.titulo}</Text>
+                  <Text style={estilos.categoria}>
+                    {item.categoria}
+                  </Text>
+                  <Text style={estilos.icones}>
+                    <Ionicons
+                      name="restaurant-outline"
+                      size={16}
+                      color="black"
+                    />{" "}
+                    {item.rendimento}{" "}
+                    <MaterialCommunityIcons
+                      name="timer-settings-outline"
+                      size={16}
+                      color="black"
+                    />{" "}
+                    {item.tempoDePreparo}
+                  </Text>
+                </View>
+              </Pressable>
+            </View>
+          )}
+          keyExtractor={(receita) => receita.id}
+        />
+      ) : null}
+
+      <StatusBar style="light" />
     </SafeAreaView>
   );
 };
-
-export default Buscar;
 
 const estilos = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FCF6EE",
+    marginBottom: 50,
   },
-  viewForm: {
+  input: {
+    flex: 1,
+    height: 50,
+    backgroundColor: "#EBEBEB",
+    margin: 20,
+    borderRadius: 5,
+    fontSize: 19,
+    paddingLeft: 15,
+    paddingRight: 15,
+    color: "#000",
+  },
+  searchArea: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#ddd",
-    width: "100%",
-    position: "absolute",
+  },
+  orderButton: {
+    width: 32,
+    marginRight: 30,
+  },
+  list: {
+    flex: 1,
+    marginBottom: 50,
+  },
+  textoBusca: {
+    fontSize: 16,
+    paddingBottom: 4,
+    marginLeft: 18,
+  },
+  itemFilme: {
+    flexDirection: "row",
+    marginVertical: 8,
+    borderRadius: 4,
+    alignItems: "center",
+    borderWidth: 1,
+    backgroundColor: "#f8f8f8"
+  },
+  botaoExcluir: {
+    backgroundColor: "#c0220b",
     padding: 8,
-    paddingLeft: 16,
+    borderRadius: 4,
   },
-  searchInput: {
-    fontSize: 14,
-    width: "65%",
-    marginHorizontal: 16,
-  },
-  botao: {
-    padding: 10,
+  cabecalho: {
+    marginVertical: 8,
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
   },
+  botaoExcluirTudo: {
+    borderWidth: 1,
+    borderColor: "red",
+    padding: 8,
+    borderRadius: 4,
+  },
+  textoExcluirTudo: {
+    color: "#c0220b",
+  },
+  titulo: {
+    fontFamily: "merienda",
+    textTransform: "capitalize",
+    marginTop: 16,
+    textAlign: "center",
+  },
+  imagem: {
+    width: 150,
+    height: 150,
+  },
+  descricao: {
+    alignItems: "center",
+    width: "55%",
+    height: "100%",
+  },
+  categoria: {
+    textTransform: "capitalize",
+    fontFamily: "merienda",
+    marginTop: 8,
+  },
+  icones: {
+    fontFamily: "manrope",
+    fontSize: 12,
+    marginTop: 16,
+  },
 });
+
+export default Buscar;
