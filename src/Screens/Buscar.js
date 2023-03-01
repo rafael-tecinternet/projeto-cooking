@@ -107,12 +107,11 @@ const Buscar = () => {
       {searchText ? (
         <FlatList
           data={list}
-          style={estilos.list}
           renderItem={({ item }) => (
             <View key={item.id}>
               <Pressable
                 onPress={verDetalhes.bind(this, item)}
-                style={estilos.itemFilme}
+                style={estilos.itemReceita}
               >
                 <Image
                   source={{
@@ -157,6 +156,7 @@ const estilos = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FCF6EE",
     marginBottom: 50,
+    padding: 8
   },
   input: {
     flex: 1,
@@ -173,31 +173,18 @@ const estilos = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  orderButton: {
-    width: 32,
-    marginRight: 30,
-  },
-  list: {
-    flex: 1,
-    marginBottom: 50,
-  },
   textoBusca: {
     fontSize: 16,
     paddingBottom: 4,
     marginLeft: 18,
   },
-  itemFilme: {
+  itemReceita: {
     flexDirection: "row",
     marginVertical: 8,
-    borderRadius: 4,
-    alignItems: "center",
+    borderRadius: 8,
     borderWidth: 1,
-    backgroundColor: "#f8f8f8"
-  },
-  botaoExcluir: {
-    backgroundColor: "#c0220b",
-    padding: 8,
-    borderRadius: 4,
+    backgroundColor: "#f8f8f8",
+    width: "100%",
   },
   cabecalho: {
     marginVertical: 8,
@@ -205,29 +192,20 @@ const estilos = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  botaoExcluirTudo: {
-    borderWidth: 1,
-    borderColor: "red",
-    padding: 8,
-    borderRadius: 4,
-  },
-  textoExcluirTudo: {
-    color: "#c0220b",
-  },
   titulo: {
     fontFamily: "merienda",
     textTransform: "capitalize",
-    marginTop: 16,
-    textAlign: "center",
+    
   },
   imagem: {
     width: 150,
     height: 150,
+    borderRadius: 8,
   },
   descricao: {
+    width:"63%",
     alignItems: "center",
-    width: "55%",
-    height: "100%",
+    padding: 18
   },
   categoria: {
     textTransform: "capitalize",

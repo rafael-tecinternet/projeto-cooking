@@ -9,6 +9,7 @@ import {
   Text,
   View,
   Image,
+  RefreshControl 
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
@@ -16,6 +17,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Favoritos = () => {
   const [listaFavoritos, setListaFavoritos] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
+
 
   const navigation = useNavigation();
 
@@ -33,6 +36,21 @@ const Favoritos = () => {
     }
     carregarFavoritos();
   }, []);
+  
+  const atualizarFavoritos = async () => {
+    setRefreshing(true);
+    try {
+      const dados = await AsyncStorage.getItem("@favoritos");
+      const receita = JSON.parse(dados);
+      if (dados != null) {
+        setListaFavoritos(receita);
+      }
+    } catch (error) {
+      console.log("Deu ruim no carregamento: " + error.message);
+    }
+    setRefreshing(false);
+  }
+  
 
   const verDetalhes = (receitaSelecionada) => {
     navigation.navigate("Detalhes", { receita: receitaSelecionada });
@@ -93,6 +111,7 @@ const Favoritos = () => {
     );
    
   };
+ 
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.cabecalho}>
@@ -148,6 +167,12 @@ const Favoritos = () => {
             </Pressable>
           </View>
         )}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={atualizarFavoritos}
+          />
+        }      
       />
 
     </SafeAreaView>
