@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "projeto-cooking",
-    "slug": "projeto-cooking",
+    "slug": "pcooking",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,9 +12,12 @@
       "backgroundColor": "#C20000"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/805b0298-3f71-44cc-a304-182dba035383"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -23,6 +26,15 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "805b0298-3f71-44cc-a304-182dba035383"
+      }
+    },
+    "owner": "rafael-tecinternet",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
