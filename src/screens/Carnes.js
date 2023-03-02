@@ -80,7 +80,7 @@ const Carnes = ({ navigation }) => {
             >
               <Image
                 source={{
-                  uri: `http://192.168.61.147servidor-images/${receita.imagem}`,
+                  uri: `http://192.168.61.147/servidor-images/${receita.imagem}`,
                 }}
                 style={estilos.imagem}
               />
