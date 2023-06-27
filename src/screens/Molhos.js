@@ -80,7 +80,7 @@ const Molhos = ({ navigation }) => {
             >
               <Image
                 source={{
-                  uri: `http://10.20.48.26/servidor-imagens/${receita.imagem}`,
+                  uri: `http://192.168.222.147/servidor-images/${receita.imagem}`,
                 }}
                 style={estilos.imagem}
               />

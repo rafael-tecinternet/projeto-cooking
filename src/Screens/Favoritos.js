@@ -133,7 +133,7 @@ const Favoritos = () => {
             >
             <Image
               source={{
-              uri: `http://10.20.48.26/servidor-imagens/${item.imagem}`,
+              uri: `http://192.168.222.147/servidor-images/${item.imagem}`,
               }}
               style={estilos.imagem}
             />
