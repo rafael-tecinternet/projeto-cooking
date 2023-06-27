@@ -18,6 +18,7 @@ const Home = ({ navigation }) => {
   const [fonteCarregada] = useFonts({
     merienda: require("../../assets/fonts/Merienda-Bold.ttf"),
     manrope: require("../../assets/fonts/Manrope-Light.ttf"),
+    manropeBold: require("../../assets/fonts/Manrope-Bold.ttf")
   });
 
   const [receitas, setReceitas] = useState([]);
@@ -107,7 +108,6 @@ const estilos = StyleSheet.create({
     padding: 16,
     fontFamily: "merienda",
     textTransform: "capitalize",
-    textAlign: "center",
     width: 380
   },
   corpo: {
@@ -135,7 +135,7 @@ const estilos = StyleSheet.create({
   viewCategoria: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
     width: 350,
+    justifyContent: "space-between",
   },
 });

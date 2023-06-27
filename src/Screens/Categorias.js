@@ -119,28 +119,27 @@ const estilos = StyleSheet.create({
     justifyContent: "center",
   },
   categoriaSuperior: {
-    marginTop: 50,
-    marginBottom: 30,
+    marginTop: 80,
     flexDirection: "row",
     justifyContent: "space-evenly",
     width: "100%",
   },
   categoriaMeio: {
-    marginBottom: 30,
+    marginVertical: 24,
     flexDirection: "row",
     justifyContent: "space-evenly",
     width: "100%",
   },
   categoriaInferior: {
-    marginBottom: 100,
+    marginBottom: 130,
     flexDirection: "row",
     justifyContent: "space-evenly",
     width: "100%",
   },
 
   tinyLogo: {
-    marginTop: 5,
-    width: 160,
+    marginTop: 10,
+    width: 180,
     height: 160,
     margin: 10,
     borderRadius: 18,

@@ -63,14 +63,6 @@ const Vegano = ({ navigation }) => {
 
   return (
     <SafeAreaView style={estilos.container}>
-      {/* <FlatList
-        data={receitas}
-        renderItem={({ item }) => (
-          <View>
-            <Text>{item.modoDePreparo}</Text>
-          </View>
-        )}
-      /> */}
       <ScrollView style={estilos.view}>
         {receitas.map((receita) => (
           <View style={estilos.corpo} key={receita.id}>

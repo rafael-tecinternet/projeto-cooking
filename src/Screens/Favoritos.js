@@ -139,9 +139,6 @@ const Favoritos = () => {
             />
                 <View style={estilos.descricao}>
                   <Text style={estilos.titulo}>{item.titulo}</Text>
-                  <Text style={estilos.categoria}>
-                    {item.categoria}
-                  </Text>
                   <Text style={estilos.icones}>
                     <Ionicons
                       name="restaurant-outline"
@@ -156,6 +153,10 @@ const Favoritos = () => {
                     />{" "}
                     {item.tempoDePreparo}
                   </Text>
+                  <Text style={estilos.categoria}>
+                    {item.categoria}
+                  </Text>
+                  
                 </View>
 
                 <Pressable
@@ -190,15 +191,13 @@ const estilos = StyleSheet.create({
   itemFilme: {
     flexDirection: "row",
     marginVertical: 8,
-    borderRadius: 4,
     alignItems: "center",
-    borderWidth: 1,
-    backgroundColor: "#f8f8f8"
   },
   botaoExcluir: {
     backgroundColor: "#c0220b",
     padding: 8,
     borderRadius: 4,
+    marginHorizontal: 8,
   },
   cabecalho: {
     marginVertical: 8,
@@ -217,27 +216,25 @@ const estilos = StyleSheet.create({
   },
   titulo: {
     fontFamily: "merienda",
-    textTransform: "capitalize",
-    marginTop: 16,
-    textAlign: "center",
+    fontSize: 13,
   },
   imagem: {
-    width: 150,
-    height: 150,
+    width: 80,
+    height: 80,
+    borderRadius: 75,
+    marginHorizontal: 12,
   },
   descricao: {
-    alignItems: "center",
-    width: "55%",
-    height: "100%",
+    width: 260,
   },
   categoria: {
+    fontFamily: "manropeBold",
+    fontSize: 12,
     textTransform: "capitalize",
-    fontFamily: "merienda",
-    marginTop: 8,
   },
   icones: {
     fontFamily: "manrope",
     fontSize: 12,
-    marginTop: 16,
+    marginVertical: 8,
   },
 });
