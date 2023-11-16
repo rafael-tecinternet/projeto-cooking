@@ -80,7 +80,7 @@ const Doces = ({ navigation }) => {
             >
               <Image
                 source={{
-                  uri: `http://192.168.222.147/servidor-images/${receita.imagem}`,
+                  uri: `http://192.168.0.195/servidor-images/${receita.imagem}`,
                 }}
                 style={estilos.imagem}
               />
